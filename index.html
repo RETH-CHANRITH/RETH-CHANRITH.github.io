@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reth Chanrith | Junior Mobile Developer</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <meta name="description"
+    content="Portfolio of Reth Chanrith — IT Engineering student at RUPP, specializing in Android and Flutter mobile development. Seeking internship opportunities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=22" />
+</head>
+
+<body>
+
+  <!-- SVG Defs for skill ring gradients -->
+  <svg class="svg-defs" aria-hidden="true">
+    <defs>
+      <linearGradient id="gradViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6d28d9" /><stop offset="100%" stop-color="#818cf8" />
+      </linearGradient>
+      <linearGradient id="gradMint" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00ffa3" /><stop offset="100%" stop-color="#00e5ff" />
+      </linearGradient>
+      <linearGradient id="gradAmber" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f97316" /><stop offset="100%" stop-color="#fbbf24" />
+      </linearGradient>
+      <linearGradient id="gradRed" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ef4444" /><stop offset="100%" stop-color="#f97316" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div id="scrollProgress"></div>
+  <canvas id="particleCanvas"></canvas>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <button id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Reth Chanrith">
+        <img src="assets/favicon.svg" alt="R" class="nav-logo-icon" />
+        <span>Reth Chanrith</span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <div class="nav-pill" id="navPill"></div>
+          <li><a href="#about"      class="nav-link">About</a></li>
+          <li><a href="#skills"     class="nav-link">Skills</a></li>
+          <li><a href="#projects"   class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#education"  class="nav-link">Education</a></li>
+          <li><a href="#contact"    class="nav-link">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta" id="navCta">
+          <span class="nav-cta-dot"></span>
+          <span>Hire Me</span>
+          <svg class="nav-cta-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="mesh-bg"></div>
+      <div class="grain"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-lines"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Open to Internship Opportunities
+      </div>
+      <h1 class="hero-title">Hi, I'm<br><span class="gradient-text">Reth Chanrith</span></h1>
+      <div class="hero-typewriter">
+        <span>I craft&nbsp;</span>
+        <span class="typewriter-text" id="typewriterText"></span>
+        <span class="typewriter-cursor">|</span>
+      </div>
+      <p class="hero-desc">
+        IT Engineering student at <strong>Royal University of Phnom Penh</strong> — building high-performance mobile
+        experiences with <strong>Flutter</strong>, <strong>Kotlin</strong>, <strong>Firebase</strong> &amp; <strong>Supabase</strong>.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary magnetic" id="heroViewWork">
+          <span>View My Work</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </a>
+        <a href="#contact"  class="btn btn-outline magnetic" id="heroContact">
+          <span>Get In Touch</span>
+        </a>
+      </div>
+      <div class="hero-stats glass">
+        <div class="stat-item"><span class="stat-num" data-target="3">3+</span><span class="stat-label">Major Projects</span></div>
+        <div class="stat-item"><span class="stat-num" data-target="3">3+</span><span class="stat-label">Core Languages</span></div>
+        <div class="stat-item"><span class="stat-num" data-target="11">11+</span><span class="stat-label">GitHub Repos</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="avatar-wrap" id="heroAvatarWrap">
+        <div class="avatar-ring ring-1"></div>
+        <div class="avatar-ring ring-2"></div>
+        <div class="avatar-ring ring-3"></div>
+        <div class="avatar-conic"><div class="avatar-conic-inner"></div></div>
+        <div class="avatar-img-wrap">
+          <img src="assets/profile.jpg" alt="Reth Chanrith" class="avatar-img" id="avatarImg" />
+        </div>
+        <div class="float-badge fb-supabase" data-depth="25">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L.242 13.916A.792.792 0 0 0 .858 15.2h9.362v8.958a.396.396 0 0 0 .716.233l11.042-13.753a.792.792 0 0 0-.616-1.284z"/></svg>
+          Supabase
+        </div>
+        <div class="float-badge fb-flutter" data-depth="22">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.37zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg>
+          Flutter
+        </div>
+        <div class="float-badge fb-kotlin" data-depth="20">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M24 24H0V0h24L12 12z"/></svg>
+          Kotlin
+        </div>
+        <div class="float-badge fb-firebase" data-depth="22">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M3.89 15.672L6.255.461A.542.542 0 0 1 7.27.288l2.543 4.771zm16.794 3.692l-2.25-14a.54.54 0 0 0-.919-.295L3.316 19.365l7.856 4.427a1.621 1.621 0 0 0 1.588 0zM14.3 7.147l-1.82-3.482a.542.542 0 0 0-.96 0L3.53 17.984z"/></svg>
+          Firebase
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      <span>Scroll</span>
+    </a>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="section section-dark" id="about">
+    <span class="section-num">01</span>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Get to know me</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-side reveal">
+          <div class="about-photo-card glass" id="aboutPhotoCard">
+            <div class="about-img-wrap">
+              <div class="about-avatar-ring">
+                <div class="about-avatar-ring-inner"></div>
+              </div>
+              <img src="assets/profile.jpg" alt="Reth Chanrith" class="about-img" />
+            </div>
+            <div class="about-name">Reth Chanrith</div>
+            <div class="about-meta-row">
+              <span class="about-role-badge">Junior Mobile Dev</span>
+              <span class="about-handle">@mechanrith</span>
+            </div>
+
+            <div class="about-chips">
+              <div class="chip chip-edu">
+                <div class="chip-icon-box">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                </div>
+                <div class="chip-content">
+                  <span class="chip-label">Education</span>
+                  <span class="chip-val">RUPP — Year 3, Sem 2</span>
+                </div>
+              </div>
+
+              <div class="chip chip-loc">
+                <div class="chip-icon-box">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="chip-content">
+                  <span class="chip-label">Location</span>
+                  <span class="chip-val">Phnom Penh, Cambodia</span>
+                </div>
+              </div>
+
+              <div class="chip chip-role">
+                <div class="chip-icon-box">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                </div>
+                <div class="chip-content">
+                  <span class="chip-label">Specialization</span>
+                  <span class="chip-val">Flutter &amp; Android (Kotlin)</span>
+                </div>
+              </div>
+
+              <div class="chip chip-lang">
+                <div class="chip-icon-box">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div class="chip-content">
+                  <span class="chip-label">Languages</span>
+                  <span class="chip-val">Khmer (Native) · English</span>
+                </div>
+              </div>
+
+              <div class="chip chip-age">
+                <div class="chip-icon-box">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div class="chip-content">
+                  <span class="chip-label">Age &amp; DOB</span>
+                  <span class="chip-val">5 June 2003 (22 yrs)</span>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="about-body reveal">
+          <p>
+            I'm an <strong>IT Engineering student</strong> at the Royal University of Phnom Penh with
+            hands-on experience building real-world Android and Flutter applications. I'm deeply
+            passionate about mobile development and love turning ideas into polished, user-friendly apps.
+          </p>
+          <p>
+            I've shipped a <strong>Gym Trainer Booking App</strong> with real-time payments, a
+            <strong>Campus Social App</strong> (KAMPUS) with WebRTC video calling, and
+            <strong>EZTalk</strong> — a full-featured mobile chat app. All built from concept to deployment.
+          </p>
+          <p>
+            Currently seeking an <strong>internship opportunity</strong> in mobile application development
+            where I can apply my skills, contribute meaningfully to a team, and grow as a professional developer.
+          </p>
+
+          <!-- Highlights Metric Row -->
+          <div class="about-highlights">
+            <div class="about-hl-card">
+              <div class="hl-icon hl-icon-purple">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              </div>
+              <div class="hl-text">
+                <div class="hl-num">3+ Apps</div>
+                <div class="hl-desc">Shipped from concept to production</div>
+              </div>
+            </div>
+            <div class="about-hl-card">
+              <div class="hl-icon hl-icon-mint">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <div class="hl-text">
+                <div class="hl-num">Full-Stack</div>
+                <div class="hl-desc">Flutter, Kotlin, Supabase &amp; Firebase</div>
+              </div>
+            </div>
+            <div class="about-hl-card">
+              <div class="hl-icon hl-icon-cyan">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="hl-text">
+                <div class="hl-num">Open for Hire</div>
+                <div class="hl-desc">Ready for Mobile Internship</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-hobbies">
+            <h4>Interests &amp; Hobbies</h4>
+            <div class="hobby-grid">
+              <span class="hobby">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                Researching Tech
+              </span>
+              <span class="hobby">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Reading
+              </span>
+              <span class="hobby">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v16M18 4v16M2 8v8M22 8v8M6 12h12"/></svg>
+                Fitness
+              </span>
+              <span class="hobby">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Music
+              </span>
+              <span class="hobby">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+                Movies
+              </span>
+            </div>
+          </div>
+          <div class="about-btns">
+            <a href="https://github.com/RETH-CHANRITH" target="_blank" rel="noopener" class="btn btn-outline btn-github" id="aboutGithub">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              <span>GitHub Profile</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-arrow"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/chan-rith-323282300/" target="_blank" rel="noopener" class="btn btn-outline btn-linkedin" id="aboutLinkedin">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-arrow"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+            </a>
+            <a href="https://t.me/mechanrith" target="_blank" rel="noopener" class="btn btn-outline btn-telegram" id="aboutTelegram">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              <span>Telegram</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-arrow"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GITHUB ACTIVITY ── -->
+  <section class="section github-act" id="github">
+    <div class="container">
+      <div class="gh-top reveal">
+        <a href="https://github.com/RETH-CHANRITH" target="_blank" rel="noopener" class="gh-brand" id="ghBrandLink">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span>GitHub Activity</span>
+          <span class="gh-username">@RETH-CHANRITH</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gh-external-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <div class="gh-live-stats">
+          <div class="gh-stat-item">
+            <span class="gh-stat-num" id="ghRepos"><span class="gh-loading"></span></span>
+            <span class="gh-stat-label">Repos</span>
+          </div>
+          <div class="gh-stat-item">
+            <span class="gh-stat-num" id="ghStars"><span class="gh-loading"></span></span>
+            <span class="gh-stat-label">Stars</span>
+          </div>
+          <div class="gh-stat-item">
+            <span class="gh-stat-num" id="ghFollowers"><span class="gh-loading"></span></span>
+            <span class="gh-stat-label">Followers</span>
+          </div>
+          <div class="gh-stat-item">
+            <span class="gh-stat-num" id="ghFollowing"><span class="gh-loading"></span></span>
+            <span class="gh-stat-label">Following</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gh-body">
+        <!-- Contribution Graph -->
+        <div class="gh-chart-card glass reveal">
+          <div class="gh-card-head">
+            <div class="gh-head-left">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Contribution Graph</span>
+            </div>
+            <span class="gh-total-contrib" id="ghTotalContrib">140 contributions in the last year</span>
+          </div>
+          <div class="gh-chart-wrap" id="ghChartWrap">
+            <div id="ghCalendarContainer" class="gh-calendar-container"></div>
+          </div>
+          <div class="gh-chart-footer">
+            <span class="gh-footer-hint">Live GitHub commits &amp; contributions</span>
+            <div class="gh-legend">
+              <span>Less</span>
+              <span class="legend-cell lvl-0"></span>
+              <span class="legend-cell lvl-1"></span>
+              <span class="legend-cell lvl-2"></span>
+              <span class="legend-cell lvl-3"></span>
+              <span class="legend-cell lvl-4"></span>
+              <span>More</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Language Usage -->
+        <div class="gh-lang-card glass reveal">
+          <div class="gh-card-head">
+            <div class="gh-head-left">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>Language Usage</span>
+            </div>
+          </div>
+          <div class="gh-lang-bars" id="langBars">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="ghTooltip" class="gh-tooltip"></div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section class="section" id="skills">
+    <span class="section-num">02</span>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What I work with</span>
+        <h2 class="section-title">Tech <span class="gradient-text">Stack</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <!-- Mobile Dev -->
+        <div class="skill-box glass reveal">
+          <div class="skill-box-header">
+            <span class="skill-box-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </span>
+            <h3>Mobile Development</h3>
+          </div>
+          <div class="skill-rings">
+            <div class="ring-skill violet">
+              <div class="ring-chart-wrap">
+                <svg class="ring-svg" width="86" height="86" viewBox="0 0 86 86">
+                  <circle class="ring-bg-disc" cx="43" cy="43" r="34" />
+                  <circle class="ring-track" cx="43" cy="43" r="34" stroke-width="6" />
+                  <circle class="ring-fill ring-fill-violet" data-pct="85" cx="43" cy="43" r="34" stroke-width="6" stroke-dasharray="0 213.6" />
+                </svg>
+                <div class="ring-center">
+                  <span class="ring-skill-pct" data-ring-pct="85">0%</span>
+                </div>
+              </div>
+              <div class="ring-skill-meta">
+                <span class="ring-skill-label">Flutter</span>
+                <span class="ring-skill-badge">Cross-Platform</span>
+              </div>
+            </div>
+
+            <div class="ring-skill mint">
+              <div class="ring-chart-wrap">
+                <svg class="ring-svg" width="86" height="86" viewBox="0 0 86 86">
+                  <circle class="ring-bg-disc" cx="43" cy="43" r="34" />
+                  <circle class="ring-track" cx="43" cy="43" r="34" stroke-width="6" />
+                  <circle class="ring-fill ring-fill-mint" data-pct="80" cx="43" cy="43" r="34" stroke-width="6" stroke-dasharray="0 213.6" />
+                </svg>
+                <div class="ring-center">
+                  <span class="ring-skill-pct" data-ring-pct="80">0%</span>
+                </div>
+              </div>
+              <div class="ring-skill-meta">
+                <span class="ring-skill-label">Kotlin</span>
+                <span class="ring-skill-badge">Native Android</span>
+              </div>
+            </div>
+
+            <div class="ring-skill violet">
+              <div class="ring-chart-wrap">
+                <svg class="ring-svg" width="86" height="86" viewBox="0 0 86 86">
+                  <circle class="ring-bg-disc" cx="43" cy="43" r="34" />
+                  <circle class="ring-track" cx="43" cy="43" r="34" stroke-width="6" />
+                  <circle class="ring-fill ring-fill-violet" data-pct="75" cx="43" cy="43" r="34" stroke-width="6" stroke-dasharray="0 213.6" />
+                </svg>
+                <div class="ring-center">
+                  <span class="ring-skill-pct" data-ring-pct="75">0%</span>
+                </div>
+              </div>
+              <div class="ring-skill-meta">
+                <span class="ring-skill-label">Compose</span>
+                <span class="ring-skill-badge">Modern UI</span>
+              </div>
+            </div>
+
+            <div class="ring-skill mint">
+              <div class="ring-chart-wrap">
+                <svg class="ring-svg" width="86" height="86" viewBox="0 0 86 86">
+                  <circle class="ring-bg-disc" cx="43" cy="43" r="34" />
+                  <circle class="ring-track" cx="43" cy="43" r="34" stroke-width="6" />
+                  <circle class="ring-fill ring-fill-mint" data-pct="70" cx="43" cy="43" r="34" stroke-width="6" stroke-dasharray="0 213.6" />
+                </svg>
+                <div class="ring-center">
+                  <span class="ring-skill-pct" data-ring-pct="70">0%</span>
+                </div>
+              </div>
+              <div class="ring-skill-meta">
+                <span class="ring-skill-label">Java / XML</span>
+                <span class="ring-skill-badge">Core Android</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="skill-box glass reveal">
+          <div class="skill-box-header">
+            <span class="skill-box-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-list">
+            <div class="sk"><div class="sk-top"><span class="sk-name">Dart</span><span class="sk-pct">80%</span></div><div class="sk-bar"><div class="sk-fill" style="--w:80%"></div></div></div>
+            <div class="sk"><div class="sk-top"><span class="sk-name">Kotlin</span><span class="sk-pct">78%</span></div><div class="sk-bar"><div class="sk-fill" style="--w:78%"></div></div></div>
+            <div class="sk"><div class="sk-top"><span class="sk-name">Java</span><span class="sk-pct">72%</span></div><div class="sk-bar"><div class="sk-fill" style="--w:72%"></div></div></div>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-box glass reveal">
+          <div class="skill-box-header">
+            <span class="skill-box-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </span>
+            <h3>Backend &amp; Database</h3>
+          </div>
+          <div class="skill-list">
+            <div class="sk"><div class="sk-top"><span class="sk-name">Firebase</span><span class="sk-pct">82%</span></div><div class="sk-bar"><div class="sk-fill" style="--w:82%"></div></div></div>
+            <div class="sk"><div class="sk-top"><span class="sk-name">Supabase</span><span class="sk-pct">70%</span></div><div class="sk-bar"><div class="sk-fill" style="--w:70%"></div></div></div>
+            <div class="sk"><div class="sk-top"><span class="sk-name">MySQL</span><span class="sk-pct">65%</span></div><div class="sk-bar"><div class="sk-fill" style="--w:65%"></div></div></div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-box glass reveal">
+          <div class="skill-box-header">
+            <span class="skill-box-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </span>
+            <h3>Tools &amp; Technologies</h3>
+          </div>
+          <div class="tools-wrap">
+            <span class="tool">Android Studio</span>
+            <span class="tool">VS Code</span>
+            <span class="tool">Git &amp; GitHub</span>
+            <span class="tool">Figma</span>
+            <span class="tool">Postman</span>
+            <span class="tool">REST API</span>
+            <span class="tool">WebRTC</span>
+            <span class="tool">UML</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section class="section section-dark" id="projects">
+    <span class="section-num">03</span>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What I've built</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Gym App -->
+        <div class="proj-card glass featured reveal" id="proj-gym">
+          <div class="proj-top">
+            <div class="proj-card-header">
+              <div class="proj-icon-wrap proj-icon-mint">
+                <!-- Fitness Dumbbell SVG -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11M6.5 17.5h11M4 9v6M20 9v6M2 10v4M22 10v4M8 6.5v11M16 6.5v11M6.5 12h11"/></svg>
+              </div>
+              <a href="https://github.com/RETH-CHANRITH/gym_trainner_app" target="_blank" class="proj-gh-link" aria-label="GitHub Repository">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span>Code</span>
+                <svg class="proj-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+            <div class="proj-badge-row">
+              <span class="proj-badge proj-badge-featured"><span class="pulse-beacon"></span> Featured &middot; Cross-Platform</span>
+            </div>
+            <h3 class="proj-title">Gym Trainer Booking App</h3>
+            <p class="proj-desc">A full-featured fitness platform connecting users with personal trainers. Real-time booking, in-app wallet payments, and role-based dashboards.</p>
+            <ul class="proj-feats">
+              <li><strong>Auth &amp; Onboarding:</strong> Email &amp; Google Sign-In with fitness goal profiles</li>
+              <li><strong>Trainer Discovery:</strong> Search, trainer availability &amp; session booking calendar</li>
+              <li><strong>Real-Time Comms:</strong> Direct trainer messaging &amp; push notifications</li>
+              <li><strong>In-App Wallet:</strong> Secure balance module for seamless session checkout</li>
+              <li><strong>Multi-Role Dashboards:</strong> Dedicated views for User, Trainer, and Admin</li>
+            </ul>
+          </div>
+          <div class="proj-footer">
+            <div class="proj-pills">
+              <span class="pill pill-flutter">Flutter</span>
+              <span class="pill pill-firebase">Firebase</span>
+              <span class="pill pill-supabase">Supabase</span>
+              <span class="pill pill-dart">Dart</span>
+            </div>
+            <div class="proj-meta">
+              <span class="proj-stars-badge" id="stars-gym">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span>Active</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- KAMPUS -->
+        <div class="proj-card glass reveal" id="proj-kampus">
+          <div class="proj-top">
+            <div class="proj-card-header">
+              <div class="proj-icon-wrap proj-icon-violet">
+                <!-- University / Campus SVG -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <a href="https://github.com/RETH-CHANRITH/KAMPUS" target="_blank" class="proj-gh-link" aria-label="GitHub Repository">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span>Code</span>
+                <svg class="proj-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+            <div class="proj-badge-row">
+              <span class="proj-badge proj-badge-native">Native Android &middot; Jetpack Compose</span>
+            </div>
+            <h3 class="proj-title">KAMPUS — Campus Social App</h3>
+            <p class="proj-desc">A campus-wide social platform for RUPP students to connect, share, and communicate with real-time chat and video calling.</p>
+            <ul class="proj-feats">
+              <li><strong>Campus Feed:</strong> Social post sharing, student clubs &amp; university events</li>
+              <li><strong>Friend Connections:</strong> Real-time friend requests &amp; live presence status</li>
+              <li><strong>WebRTC Calling:</strong> High-quality peer-to-peer audio and video calling</li>
+              <li><strong>Follower Dynamics:</strong> Live follower/following stats and profile bios</li>
+              <li><strong>Moderation Tools:</strong> Admin console for student safety &amp; content review</li>
+            </ul>
+          </div>
+          <div class="proj-footer">
+            <div class="proj-pills">
+              <span class="pill pill-kotlin">Kotlin</span>
+              <span class="pill pill-compose">Jetpack Compose</span>
+              <span class="pill pill-firebase">Firebase</span>
+              <span class="pill pill-webrtc">WebRTC</span>
+            </div>
+            <div class="proj-meta">
+              <span class="proj-stars-badge" id="stars-kampus">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span>Active</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- EZTalk -->
+        <div class="proj-card glass reveal" id="proj-eztalk">
+          <div class="proj-top">
+            <div class="proj-card-header">
+              <div class="proj-icon-wrap proj-icon-cyan">
+                <!-- Chat / Messaging SVG -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <a href="https://github.com/EZTalk-mobile/EZTalk" target="_blank" class="proj-gh-link" aria-label="GitHub Repository">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span>Code</span>
+                <svg class="proj-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+            <div class="proj-badge-row">
+              <span class="proj-badge proj-badge-chat">Real-Time Messaging &middot; Java &amp; WebRTC</span>
+            </div>
+            <h3 class="proj-title">EZTalk — Mobile Chat App</h3>
+            <p class="proj-desc">Feature-rich messaging app with real-time chats, audio/video calling, media sharing, and push notifications.</p>
+            <ul class="proj-feats">
+              <li><strong>Direct &amp; Group Chat:</strong> Low-latency 1-on-1 and multi-user group chat rooms</li>
+              <li><strong>Audio/Video Calling:</strong> WebRTC voice and high-resolution video streaming</li>
+              <li><strong>Rich Media Exchange:</strong> Seamless file, photo, and multimedia upload pipeline</li>
+              <li><strong>Instant Push Alerts:</strong> Reliable background push notifications for new messages</li>
+              <li><strong>Group Governance:</strong> Custom group naming, member roles &amp; room settings</li>
+            </ul>
+          </div>
+          <div class="proj-footer">
+            <div class="proj-pills">
+              <span class="pill pill-java">Java</span>
+              <span class="pill pill-firebase">Firebase</span>
+              <span class="pill pill-webrtc">WebRTC</span>
+            </div>
+            <div class="proj-meta">
+              <span class="proj-stars-badge" id="stars-eztalk">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span>Active</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects-cta reveal">
+        <a href="https://github.com/RETH-CHANRITH" target="_blank" class="btn btn-github-showcase magnetic" id="allProjectsBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span>Explore All 11 Repositories on GitHub</span>
+          <span class="btn-counter-badge">11 Repos</span>
+          <svg class="btn-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ── -->
+  <section class="section" id="experience">
+    <span class="section-num">04</span>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Work History</span>
+        <h2 class="section-title">My <span class="gradient-text">Experience</span></h2>
+        <p>Real-world professional roles building operational discipline, client communication, and agile execution.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal" id="exp-sabaidee">
+          <div class="tl-dot tl-dot-active"></div>
+          <div class="tl-card glass">
+            <div class="tl-head">
+              <div class="tl-role-wrap">
+                <div class="tl-icon-box tl-icon-violet">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </div>
+                <div>
+                  <div class="tl-title-row">
+                    <h3 class="tl-title">Admin &amp; Social Media Staff</h3>
+                    <span class="tl-type-badge tl-type-current">Ongoing Role</span>
+                  </div>
+                  <div class="tl-org-row">
+                    <span class="tl-org">Sabaidee Vientiane Restaurant</span>
+                    <span class="tl-org-sep">•</span>
+                    <span class="tl-loc">Phnom Penh, Cambodia</span>
+                  </div>
+                </div>
+              </div>
+              <span class="tl-date tl-date-active"><span class="pulse-beacon"></span> 2026 — Present</span>
+            </div>
+
+            <div class="tl-body">
+              <div class="tl-highlights">
+                <div class="tl-highlight-item">
+                  <span class="tl-hl-icon tl-hl-icon-violet" title="Social Media &amp; Community">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                  </span>
+                  <div class="tl-hl-text">
+                    <strong>Social Media &amp; Community:</strong> Managed daily engagement, incoming customer messages, comments, and promotional campaigns.
+                  </div>
+                </div>
+                <div class="tl-highlight-item">
+                  <span class="tl-hl-icon tl-hl-icon-cyan" title="Orders &amp; Dispatch Logistics">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                  </span>
+                  <div class="tl-hl-text">
+                    <strong>Orders &amp; Dispatch Logistics:</strong> Handled customer orders, delivery driver coordination, and accurate payment reconciliation.
+                  </div>
+                </div>
+                <div class="tl-highlight-item">
+                  <span class="tl-hl-icon tl-hl-icon-mint" title="Inventory &amp; Operations">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                  </span>
+                  <div class="tl-hl-text">
+                    <strong>Inventory &amp; Operations:</strong> Maintained structured sales tracking and stock databases in Microsoft Excel to support business decisions.
+                  </div>
+                </div>
+                <div class="tl-highlight-item">
+                  <span class="tl-hl-icon tl-hl-icon-amber" title="Agile Execution">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  </span>
+                  <div class="tl-hl-text">
+                    <strong>Agile Execution:</strong> Developed high-pressure time management, proactive communication, and quick conflict resolution.
+                  </div>
+                </div>
+              </div>
+
+              <div class="tl-competencies">
+                <span class="tl-comp-label">Core Competencies:</span>
+                <div class="tl-tags">
+                  <span class="tl-tag">Digital Operations</span>
+                  <span class="tl-tag">Customer Relations</span>
+                  <span class="tl-tag">Order Logistics</span>
+                  <span class="tl-tag">MS Excel &amp; Stock</span>
+                  <span class="tl-tag">Fast Turnaround</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal" id="exp-restaurant">
+          <div class="tl-dot"></div>
+          <div class="tl-card glass">
+            <div class="tl-head">
+              <div class="tl-role-wrap">
+                <div class="tl-icon-box tl-icon-amber">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div>
+                  <div class="tl-title-row">
+                    <h3 class="tl-title">Service Staff</h3>
+                    <span class="tl-type-badge tl-type-past">Completed</span>
+                  </div>
+                  <div class="tl-org-row">
+                    <span class="tl-org">Family Restaurant</span>
+                    <span class="tl-org-sep">•</span>
+                    <span class="tl-loc">Phnom Penh, Cambodia</span>
+                  </div>
+                </div>
+              </div>
+              <span class="tl-date">2021 — 2022 · 1 yr</span>
+            </div>
+
+            <div class="tl-body">
+              <div class="tl-highlights">
+                <div class="tl-highlight-item">
+                  <span class="tl-hl-icon tl-hl-icon-amber" title="Fast-Paced Operations">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </span>
+                  <div class="tl-hl-text">
+                    <strong>Fast-Paced Operations:</strong> Delivered attentive floor service and managed customer expectations in high-tempo dining rush hours.
+                  </div>
+                </div>
+                <div class="tl-highlight-item">
+                  <span class="tl-hl-icon tl-hl-icon-mint" title="Team Collaboration">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </span>
+                  <div class="tl-hl-text">
+                    <strong>Team Collaboration:</strong> Partnered seamlessly with kitchen and front-of-house staff to sustain smooth customer experience.
+                  </div>
+                </div>
+              </div>
+
+              <div class="tl-competencies">
+                <span class="tl-comp-label">Core Competencies:</span>
+                <div class="tl-tags">
+                  <span class="tl-tag">Guest Relations</span>
+                  <span class="tl-tag">Active Teamwork</span>
+                  <span class="tl-tag">Problem Solving</span>
+                  <span class="tl-tag">Adaptability</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section class="section section-dark" id="education">
+    <span class="section-num">05</span>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Academic Background</span>
+        <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card glass reveal edu-card-primary" id="edu-rupp">
+          <div class="edu-card-header">
+            <div class="edu-icon-wrap edu-icon-primary">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div class="edu-status-badge in-progress">
+              <span class="pulse-beacon"></span>
+              <span>In Progress · Year 3</span>
+            </div>
+          </div>
+
+          <div class="edu-body">
+            <h3 class="edu-degree">Bachelor's in Information Technology</h3>
+            <div class="edu-school">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Royal University of Phnom Penh (RUPP)</span>
+            </div>
+            <div class="edu-period">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>2023 — Present · Semester 2</span>
+            </div>
+            <p class="edu-desc">Focusing on mobile app engineering, modern software architecture, and distributed systems.</p>
+          </div>
+
+          <!-- Dynamic Progress Bar -->
+          <div class="edu-progress-box">
+            <div class="edu-progress-top">
+              <span class="edu-progress-label">Academic Progress</span>
+              <span class="edu-progress-val">75% (Year 3/4)</span>
+            </div>
+            <div class="edu-progress-track">
+              <div class="edu-progress-bar" style="--edu-w: 75%;"></div>
+            </div>
+          </div>
+
+          <div class="edu-tags">
+            <span class="edu-tag">Mobile Dev</span>
+            <span class="edu-tag">Software Eng</span>
+            <span class="edu-tag">OOP &amp; Architecture</span>
+            <span class="edu-tag">Networking</span>
+          </div>
+        </div>
+
+        <div class="edu-card glass reveal edu-card-secondary" id="edu-highschool">
+          <div class="edu-card-header">
+            <div class="edu-icon-wrap edu-icon-secondary">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="edu-status-badge completed">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Graduated</span>
+            </div>
+          </div>
+
+          <div class="edu-body">
+            <h3 class="edu-degree">High School Diploma</h3>
+            <div class="edu-school">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Lvea High School</span>
+            </div>
+            <div class="edu-period">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>2019 — 2022</span>
+            </div>
+            <p class="edu-desc">Completed General Secondary Education with solid foundation in advanced mathematics and scientific reasoning.</p>
+          </div>
+
+          <!-- Dynamic Progress Bar -->
+          <div class="edu-progress-box">
+            <div class="edu-progress-top">
+              <span class="edu-progress-label">Academic Status</span>
+              <span class="edu-progress-val">100% Completed</span>
+            </div>
+            <div class="edu-progress-track">
+              <div class="edu-progress-bar bar-mint" style="--edu-w: 100%;"></div>
+            </div>
+          </div>
+
+          <div class="edu-tags">
+            <span class="edu-tag">Mathematics</span>
+            <span class="edu-tag">Science &amp; Tech</span>
+            <span class="edu-tag">Physics</span>
+            <span class="edu-tag">Baccalaureate II</span>
+          </div>
+        </div>
+
+        <div class="edu-card glass reveal edu-card-accent" id="edu-cert">
+          <div class="edu-card-header">
+            <div class="edu-icon-wrap edu-icon-accent">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+            <div class="edu-status-badge verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Verified Credential</span>
+            </div>
+          </div>
+
+          <div class="edu-body">
+            <h3 class="edu-degree">UML &amp; Software Design</h3>
+            <div class="edu-school">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>Software Architecture Certification</span>
+            </div>
+            <div class="edu-period">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Professional Competency</span>
+            </div>
+            <p class="edu-desc">Certified in object-oriented design, architectural flow modeling, class structures, and sequence diagrams.</p>
+          </div>
+
+          <!-- Dynamic Progress Bar -->
+          <div class="edu-progress-box">
+            <div class="edu-progress-top">
+              <span class="edu-progress-label">Competency Level</span>
+              <span class="edu-progress-val">Mastery Verified</span>
+            </div>
+            <div class="edu-progress-track">
+              <div class="edu-progress-bar bar-amber" style="--edu-w: 100%;"></div>
+            </div>
+          </div>
+
+          <div class="edu-tags">
+            <span class="edu-tag">Class Diagrams</span>
+            <span class="edu-tag">Use Case Modeling</span>
+            <span class="edu-tag">Sequence Diagrams</span>
+            <span class="edu-tag">System Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="section" id="contact">
+    <span class="section-num">06</span>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Let's connect</span>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <p>I'm actively looking for mobile development internships. Have a role or just want to say hi? Reach out!</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-left reveal">
+          <div class="contact-card glass" id="cc-email">
+            <div class="cc-icon cc-icon-violet">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="cc-info">
+              <div class="cc-label">Personal Email</div>
+              <a href="mailto:rithc512@gmail.com" class="cc-val">rithc512@gmail.com</a>
+            </div>
+            <button class="cc-copy-btn" data-copy="rithc512@gmail.com" title="Copy email address" aria-label="Copy personal email">
+              <svg class="copy-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="check-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="copy-tooltip">Copied!</span>
+            </button>
+          </div>
+
+          <div class="contact-card glass" id="cc-email-rupp">
+            <div class="cc-icon cc-icon-indigo">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div class="cc-info">
+              <div class="cc-label">University Email</div>
+              <a href="mailto:reth.chanrith.2823@rupp.edu.kh" class="cc-val">reth.chanrith.2823@rupp.edu.kh</a>
+            </div>
+            <button class="cc-copy-btn" data-copy="reth.chanrith.2823@rupp.edu.kh" title="Copy university email" aria-label="Copy university email">
+              <svg class="copy-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="check-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="copy-tooltip">Copied!</span>
+            </button>
+          </div>
+
+          <div class="contact-card glass" id="cc-phone">
+            <div class="cc-icon cc-icon-mint">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.23h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+            </div>
+            <div class="cc-info">
+              <div class="cc-label">Phone &amp; Telegram</div>
+              <a href="tel:+855884670658" class="cc-val">+855 88 467 0658</a>
+            </div>
+            <button class="cc-copy-btn" data-copy="+855884670658" title="Copy phone number" aria-label="Copy phone number">
+              <svg class="copy-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="check-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="copy-tooltip">Copied!</span>
+            </button>
+          </div>
+
+          <div class="contact-card glass" id="cc-location">
+            <div class="cc-icon cc-icon-amber">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="cc-info">
+              <div class="cc-label">Location</div>
+              <span class="cc-val">Phnom Penh, Cambodia</span>
+            </div>
+            <span class="cc-status-pill"><span class="pulse-beacon"></span> GMT+7 · Available</span>
+          </div>
+
+          <div class="socials-section">
+            <div class="socials-label">Connect with me</div>
+            <div class="socials-grid">
+              <a href="https://github.com/RETH-CHANRITH" target="_blank" class="soc-btn soc-github" id="soc-github">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span>GitHub</span>
+                <svg class="soc-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/chan-rith-323282300/" target="_blank" class="soc-btn soc-linkedin" id="soc-linkedin">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+                <svg class="soc-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+              <a href="https://t.me/mechanrith" target="_blank" class="soc-btn soc-telegram" id="soc-telegram">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                <span>Telegram</span>
+                <svg class="soc-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+              <a href="https://www.facebook.com/udeu65l2i2" target="_blank" class="soc-btn soc-facebook" id="soc-facebook">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span>Facebook</span>
+                <svg class="soc-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+              <a href="https://www.instagram.com/rith_cie/" target="_blank" class="soc-btn soc-instagram" id="soc-instagram">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <span>Instagram</span>
+                <svg class="soc-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form glass reveal" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-heading">
+            <div class="form-title-row">
+              <h3>Send a Message</h3>
+              <span class="form-sla-badge"><span class="pulse-beacon"></span> Within 24h</span>
+            </div>
+            <p>Have an internship role or project idea? Let's connect.</p>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="senderName">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Your Name
+              </label>
+              <input type="text" id="senderName" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="senderEmail">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Your Email
+              </label>
+              <input type="email" id="senderEmail" name="email" placeholder="john@company.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="messageSubject">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+              Subject
+            </label>
+            <input type="text" id="messageSubject" name="subject" placeholder="Internship Opportunity at XYZ Company" required />
+          </div>
+          <div class="form-group">
+            <label for="messageBody">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Message
+            </label>
+            <textarea id="messageBody" name="message" rows="5" placeholder="Tell me about the role and your company..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full magnetic" id="submitBtn">
+            <svg class="send-plane-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <span class="btn-text">Send Message</span>
+          </button>
+          <div class="form-reassurance">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Direct dispatch to rithc512@gmail.com &middot; Fast response guaranteed</span>
+          </div>
+          <div class="form-success" id="formSuccess" style="display:none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Message sent! I'll reply within 24 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#hero" class="nav-logo" aria-label="Reth Chanrith">
+          <img src="assets/favicon.svg" alt="R" class="nav-logo-icon" />
+          <span>Reth Chanrith</span>
+        </a>
+        <p class="footer-copy">Designed &amp; built by <strong>Reth Chanrith</strong> &middot; 2025</p>
+        <nav class="footer-nav">
+          <a href="https://github.com/RETH-CHANRITH" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/chan-rith-323282300/" target="_blank">LinkedIn</a>
+          <a href="https://t.me/mechanrith" target="_blank">Telegram</a>
+          <a href="mailto:rithc512@gmail.com">Email</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=22"></script>
+</body>
+</html>
