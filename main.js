@@ -867,5 +867,54 @@ function fallbackCopy(text, cb) {
   document.body.removeChild(ta);
 }
 
+// ── CERTIFICATE MODAL ──
+const certModal = document.getElementById('certModal');
+const certThumb = document.getElementById('certThumbWrap');
+const certTrigger = document.getElementById('certModalTrigger');
+const certClose = document.getElementById('certModalClose');
+const certBackdrop = document.getElementById('certModalBackdrop');
+
+function openCertModal() {
+  if (!certModal) return;
+  certModal.classList.add('active');
+  certModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCertModal() {
+  if (!certModal) return;
+  certModal.classList.remove('active');
+  certModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (certThumb) {
+  certThumb.addEventListener('click', openCertModal);
+  certThumb.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openCertModal();
+    }
+  });
+}
+
+if (certTrigger) {
+  certTrigger.addEventListener('click', openCertModal);
+}
+
+if (certClose) {
+  certClose.addEventListener('click', closeCertModal);
+}
+
+if (certBackdrop) {
+  certBackdrop.addEventListener('click', closeCertModal);
+}
+
+window.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && certModal && certModal.classList.contains('active')) {
+    closeCertModal();
+  }
+});
+
 // ── AUTO-REFRESH GITHUB DATA every 5 minutes ──
 setInterval(fetchGitHubData, 5 * 60 * 1000);

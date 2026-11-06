@@ -30,7 +30,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=24" />
+  <link rel="stylesheet" href="style.css?v=25" />
 </head>
 
 <body>
@@ -954,23 +954,35 @@
           </div>
 
           <div class="edu-body">
-            <h3 class="edu-degree">UML &amp; Software Design</h3>
+            <h3 class="edu-degree">UML Unified Modeling Language</h3>
             <div class="edu-school">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              <span>Software Architecture Certification</span>
+              <span>Mind Luster &middot; Certified Member</span>
             </div>
             <div class="edu-period">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span>Professional Competency</span>
+              <span>Issued Dec 2025 &middot; ID: 6749668e</span>
             </div>
-            <p class="edu-desc">Certified in object-oriented design, architectural flow modeling, class structures, and sequence diagrams.</p>
+            <p class="edu-desc">Comprehensive certification in software architecture: class diagrams, use case modeling, sequence diagrams, and system design flows.</p>
+
+            <!-- Certificate Thumbnail Preview -->
+            <div class="cert-thumb-wrap" id="certThumbWrap" role="button" tabindex="0" aria-label="View Mind Luster UML Certificate">
+              <img src="assets/certificate_uml.jpg" alt="Mind Luster UML Certificate - Reth Chanrith" class="cert-thumb-img" />
+              <div class="cert-thumb-overlay">
+                <span class="cert-view-badge">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <span>Preview Certificate</span>
+                </span>
+                <span class="cert-org-pill">Mind Luster</span>
+              </div>
+            </div>
           </div>
 
           <!-- Dynamic Progress Bar -->
           <div class="edu-progress-box">
             <div class="edu-progress-top">
-              <span class="edu-progress-label">Competency Level</span>
-              <span class="edu-progress-val">Mastery Verified</span>
+              <span class="edu-progress-label">Certification Status</span>
+              <span class="edu-progress-val">Verified (No. 6749668e)</span>
             </div>
             <div class="edu-progress-track">
               <div class="edu-progress-bar bar-amber" style="--edu-w: 100%;"></div>
@@ -982,6 +994,17 @@
             <span class="edu-tag">Use Case Modeling</span>
             <span class="edu-tag">Sequence Diagrams</span>
             <span class="edu-tag">System Design</span>
+          </div>
+
+          <div class="cert-actions-row">
+            <button class="cert-action-btn btn-view" id="certModalTrigger" type="button">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>View Certificate</span>
+            </button>
+            <a href="assets/Mindluster_UML_Certificate.pdf" target="_blank" rel="noopener" class="cert-action-btn btn-pdf" title="Open official PDF certificate">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>PDF</span>
+            </a>
           </div>
         </div>
       </div>
@@ -1161,6 +1184,42 @@
     </div>
   </footer>
 
-  <script src="main.js?v=23"></script>
+  <!-- ── CERTIFICATE MODAL ── -->
+  <div class="cert-modal" id="certModal" aria-hidden="true" role="dialog" aria-labelledby="certModalTitle">
+    <div class="cert-modal-backdrop" id="certModalBackdrop"></div>
+    <div class="cert-modal-dialog">
+      <button class="cert-modal-close" id="certModalClose" aria-label="Close certificate preview">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="cert-modal-header">
+        <h3 class="cert-modal-title" id="certModalTitle">UML Unified Modeling Language</h3>
+        <div class="cert-modal-sub">
+          <span>Mind Luster Achievement</span>
+          <span>&middot;</span>
+          <span>Credential: <strong>No. 6749668e</strong></span>
+          <span>&middot;</span>
+          <span>Issued: Dec 24, 2025</span>
+        </div>
+      </div>
+      <div class="cert-modal-img-wrap">
+        <img src="assets/certificate_uml.jpg" alt="Mind Luster UML Certificate - Reth Chanrith" class="cert-modal-img" />
+      </div>
+      <div class="cert-modal-footer">
+        <span class="cert-modal-meta">Presented to Reth Chanrith &middot; Mind Luster Certified</span>
+        <div class="cert-modal-btns">
+          <a href="assets/Mindluster_UML_Certificate.pdf" target="_blank" rel="noopener" class="btn btn-outline cert-action-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Open PDF File</span>
+          </a>
+          <a href="https://www.mindluster.com" target="_blank" rel="noopener" class="btn btn-primary cert-action-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span>MindLuster.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js?v=24"></script>
 </body>
 </html>
