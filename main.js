@@ -163,7 +163,7 @@ function applyParallax(y) {
 }
 
 // ── TYPEWRITER ──
-const phrases = ['Android Apps', 'Flutter UIs', 'Supabase Cloud Apps', 'Firebase Realtime Apps', 'Mobile Experiences'];
+const phrases = ['Native Android Apps', 'Cross-Platform Flutter UIs', 'FastAPI & Cloud Backends', 'Real-Time Mobile Systems', 'High-Performance Experiences'];
 let wi = 0, ci = 0, del = false;
 const tyEl = document.getElementById('typewriterText');
 function type() {
