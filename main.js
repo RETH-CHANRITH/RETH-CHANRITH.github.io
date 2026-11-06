@@ -771,21 +771,8 @@ async function fetchGitHubData() {
       const totalStars = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
       if (ghStarsEl) animCount(ghStarsEl, totalStars > 0 ? totalStars : GH_FALLBACK.stars);
 
-      // Build live languages if repos returned
-      const langMap = {};
-      repos.forEach(r => {
-        if (r.language) langMap[r.language] = (langMap[r.language] || 0) + 1;
-      });
-      const total = Object.values(langMap).reduce((s, n) => s + n, 0);
-      if (total > 0) {
-        const sorted = Object.entries(langMap).sort((a,b) => b[1]-a[1]).slice(0, 5);
-        const liveLanguages = sorted.map(([lang, count]) => ({
-          lang,
-          pct: Math.round((count / total) * 100),
-          color: LANG_COLORS[lang] || '#818cf8'
-        }));
-        renderLanguages(liveLanguages);
-      }
+      // Preserve authentic engineering language distribution (avoids ranking HTML above Python/Kotlin/Dart)
+      renderLanguages(GH_FALLBACK.languages);
     }
 
     // Per-repo star counts
