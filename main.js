@@ -23,21 +23,24 @@ const LANG_COLORS = {
   CSS:         '#563D7C',
 };
 
-// ── PAGE LOAD ──
-function initPage() {
-  document.body.classList.add('loaded');
-  fetchGitHubData();
-  attachCalendarTooltips();
-}
+// Verified baseline data for Reth Chanrith (@RETH-CHANRITH on GitHub)
+const GH_FALLBACK = {
+  repos: 22,
+  stars: 0,
+  followers: 4,
+  following: 8,
+  totalContrib: 174,
+  languages: [
+    { lang: 'Python', pct: 32, color: '#3776AB', sub: 'FastAPI & Capstone Backend' },
+    { lang: 'Kotlin', pct: 26, color: '#7F52FF', sub: 'Native Android & Compose' },
+    { lang: 'Dart', pct: 22, color: '#00B4AB', sub: 'Flutter Cross-Platform' },
+    { lang: 'Java', pct: 12, color: '#F89820', sub: 'Android SDK Core' },
+    { lang: 'JavaScript', pct: 8, color: '#F7DF1E', sub: 'Web & Telemetry' },
+  ]
+};
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initPage);
-} else {
-  initPage();
-}
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
+
+
 
 // ── SCROLL PROGRESS BAR ──
 const progressBar = document.getElementById('scrollProgress');
@@ -526,43 +529,33 @@ const counterObs = new IntersectionObserver(entries => {
 const statsEl = document.querySelector('.hero-stats');
 if (statsEl) counterObs.observe(statsEl);
 
-// Verified baseline data for Reth Chanrith (@RETH-CHANRITH on GitHub)
-const GH_FALLBACK = {
-  repos: 22,
-  stars: 0,
-  followers: 4,
-  following: 8,
-  totalContrib: 174,
-  languages: [
-    { lang: 'Python', pct: 32, color: '#3776AB', sub: 'FastAPI & Capstone Backend' },
-    { lang: 'Kotlin', pct: 26, color: '#7F52FF', sub: 'Native Android & Compose' },
-    { lang: 'Dart', pct: 22, color: '#00B4AB', sub: 'Flutter Cross-Platform' },
-    { lang: 'Java', pct: 12, color: '#F89820', sub: 'Android SDK Core' },
-    { lang: 'JavaScript', pct: 8, color: '#F7DF1E', sub: 'Web & Telemetry' },
-  ]
-};
-
 // ── RENDER LANGUAGE USAGE ──
 function renderLanguages(langList) {
   const container = document.getElementById('langBars');
-  if (!container) return;
+  if (!container || !Array.isArray(langList)) return;
+
   container.innerHTML = '';
 
-  langList.forEach(({ lang, pct, color }) => {
+  langList.forEach(item => {
+    const lang = item.lang || '';
+    const pct = item.pct || 0;
+    const color = item.color || '#818cf8';
+    const sub = item.sub || '';
+    const subLabel = sub ? `<span class="gh-lang-sub">· ${sub}</span>` : '';
+
     const row = document.createElement('div');
     row.className = 'gh-lang-row';
-    const subLabel = sub ? `<span style="font-size:0.72rem; color:var(--muted); font-weight:400; margin-left:4px;">· ${sub}</span>` : '';
     row.innerHTML = `
       <div class="gh-lang-info">
         <span class="gh-lang-name">
-          <span class="gh-lang-dot" style="background:${color}"></span>
-          ${lang}
+          <span class="gh-lang-dot" style="background:${color};"></span>
+          <span>${lang}</span>
           ${subLabel}
         </span>
         <span class="gh-lang-pct">${pct}%</span>
       </div>
       <div class="gh-lang-bar">
-        <div class="gh-lang-fill" style="background:${color}" data-target="${pct}%"></div>
+        <div class="gh-lang-fill" style="background:${color}; width:${pct}%;" data-target="${pct}%"></div>
       </div>`;
     container.appendChild(row);
   });
@@ -954,3 +947,21 @@ window.addEventListener('keydown', e => {
 
 // ── AUTO-REFRESH GITHUB DATA every 5 minutes ──
 setInterval(fetchGitHubData, 5 * 60 * 1000);
+
+
+// ── INITIALIZE APPLICATION ──
+function initPage() {
+  document.body.classList.add('loaded');
+  fetchGitHubData();
+  attachCalendarTooltips();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPage);
+} else {
+  initPage();
+}
+
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+});
