@@ -2654,7 +2654,7 @@ a.gh-brand:hover .gh-external-icon { opacity: 1; }
 }
 .cert-thumb-img {
   width: 100%;
-  height: 145px;
+  height: 112px;
   object-fit: cover;
   object-position: center;
   display: block;
