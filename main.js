@@ -869,13 +869,38 @@ function fallbackCopy(text, cb) {
 
 // ── CERTIFICATE MODAL ──
 const certModal = document.getElementById('certModal');
-const certThumb = document.getElementById('certThumbWrap');
-const certTrigger = document.getElementById('certModalTrigger');
+const certModalTitle = document.getElementById('certModalTitle');
+const certModalSub = document.getElementById('certModalSub');
+const certModalImg = document.getElementById('certModalImg');
+const certModalPdfBtn = document.getElementById('certModalPdfBtn');
 const certClose = document.getElementById('certModalClose');
 const certBackdrop = document.getElementById('certModalBackdrop');
 
-function openCertModal() {
+function openCertModalWithData(data) {
   if (!certModal) return;
+  const title = data.certTitle || 'Technical Certificate';
+  const id = data.certId || '';
+  const date = data.certDate || '2025';
+  const img = data.certImg || 'assets/certificate_uml.jpg';
+  const pdf = data.certPdf || '';
+
+  if (certModalTitle) certModalTitle.textContent = title;
+  if (certModalSub) {
+    certModalSub.innerHTML = `<span>Mind Luster Achievement</span> &middot; <span>Credential: <strong>No. ${id}</strong></span> &middot; <span>Issued: ${date}</span>`;
+  }
+  if (certModalImg) {
+    certModalImg.src = img;
+    certModalImg.alt = `${title} - Reth Chanrith`;
+  }
+  if (certModalPdfBtn) {
+    if (pdf) {
+      certModalPdfBtn.style.display = 'inline-flex';
+      certModalPdfBtn.href = pdf;
+    } else {
+      certModalPdfBtn.style.display = 'none';
+    }
+  }
+
   certModal.classList.add('active');
   certModal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
@@ -888,19 +913,18 @@ function closeCertModal() {
   document.body.style.overflow = '';
 }
 
-if (certThumb) {
-  certThumb.addEventListener('click', openCertModal);
-  certThumb.addEventListener('keydown', e => {
+// Bind all cert triggers (thumbnails and view buttons)
+document.querySelectorAll('.cert-click-preview, .cert-trigger-btn').forEach(el => {
+  el.addEventListener('click', () => {
+    openCertModalWithData(el.dataset);
+  });
+  el.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      openCertModal();
+      openCertModalWithData(el.dataset);
     }
   });
-}
-
-if (certTrigger) {
-  certTrigger.addEventListener('click', openCertModal);
-}
+});
 
 if (certClose) {
   certClose.addEventListener('click', closeCertModal);

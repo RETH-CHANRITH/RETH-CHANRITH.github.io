@@ -30,7 +30,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=26" />
+  <link rel="stylesheet" href="style.css?v=27" />
 </head>
 
 <body>
@@ -847,102 +847,203 @@
     </div>
   </section>
 
-  <!-- ── EDUCATION ── -->
+  <!-- ── EDUCATION & CERTIFICATIONS ── -->
   <section class="section section-dark" id="education">
     <span class="section-num">05</span>
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Academic Background</span>
-        <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+        <span class="section-tag">Academic &amp; Professional Credentials</span>
+        <h2 class="section-title">Education &amp; <span class="gradient-text">Certifications</span></h2>
       </div>
-      <div class="edu-grid">
-        <div class="edu-card glass reveal edu-card-primary" id="edu-rupp">
-          <div class="edu-card-header">
-            <div class="edu-icon-wrap edu-icon-primary">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+
+      <!-- Featured University Degree -->
+      <div class="edu-degree-card glass reveal" id="edu-rupp">
+        <div class="edu-degree-layout">
+          <div class="edu-degree-main">
+            <div class="edu-degree-header">
+              <div class="edu-icon-wrap edu-icon-primary">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div>
+                <span class="edu-status-badge in-progress">
+                  <span class="pulse-beacon"></span>
+                  <span>In Progress &middot; Year 3, Semester 2</span>
+                </span>
+                <h3 class="edu-degree-title">Bachelor of Science in Information Technology</h3>
+                <div class="edu-school">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>Royal University of Phnom Penh (RUPP)</span>
+                </div>
+              </div>
             </div>
-            <div class="edu-status-badge in-progress">
-              <span class="pulse-beacon"></span>
-              <span>In Progress · Year 3</span>
-            </div>
+            <p class="edu-degree-desc">Focusing on Mobile Application Engineering, Software Architecture, Object-Oriented Design, and Distributed Cloud Systems. Building high-performance mobile apps with Flutter, Kotlin, and Firebase/Supabase.</p>
           </div>
 
-          <div class="edu-body">
-            <h3 class="edu-degree">Bachelor's in Information Technology</h3>
-            <div class="edu-school">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Royal University of Phnom Penh (RUPP)</span>
+          <div class="edu-degree-side">
+            <div class="edu-progress-box">
+              <div class="edu-progress-top">
+                <span class="edu-progress-label">Academic Progress</span>
+                <span class="edu-progress-val">75% (Year 3/4)</span>
+              </div>
+              <div class="edu-progress-track">
+                <div class="edu-progress-bar" style="--edu-w: 75%;"></div>
+              </div>
             </div>
-            <div class="edu-period">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span>2023 — Present · Semester 2</span>
+            <div class="edu-tags">
+              <span class="edu-tag">Mobile Dev</span>
+              <span class="edu-tag">Software Engineering</span>
+              <span class="edu-tag">OOP &amp; Architecture</span>
+              <span class="edu-tag">Database Systems</span>
+              <span class="edu-tag">Networking</span>
             </div>
-            <p class="edu-desc">Focusing on mobile app engineering, modern software architecture, and distributed systems.</p>
-          </div>
-
-          <!-- Dynamic Progress Bar -->
-          <div class="edu-progress-box">
-            <div class="edu-progress-top">
-              <span class="edu-progress-label">Academic Progress</span>
-              <span class="edu-progress-val">75% (Year 3/4)</span>
-            </div>
-            <div class="edu-progress-track">
-              <div class="edu-progress-bar" style="--edu-w: 75%;"></div>
-            </div>
-          </div>
-
-          <div class="edu-tags">
-            <span class="edu-tag">Mobile Dev</span>
-            <span class="edu-tag">Software Eng</span>
-            <span class="edu-tag">OOP &amp; Architecture</span>
-            <span class="edu-tag">Networking</span>
           </div>
         </div>
+      </div>
 
-        <div class="edu-card glass reveal edu-card-secondary" id="edu-highschool">
+      <!-- Certifications Subheader -->
+      <div class="certs-subheading reveal">
+        <div class="certs-subheading-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <h3>Technical Certifications</h3>
+        <span class="certs-subheading-count">3 Verified</span>
+      </div>
+
+      <!-- 3-Column Certifications Grid -->
+      <div class="certs-grid">
+
+        <!-- Cert 1: Become a Mobile Developer -->
+        <div class="edu-card glass reveal edu-card-secondary" id="cert-mobile-dev">
           <div class="edu-card-header">
             <div class="edu-icon-wrap edu-icon-secondary">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
             </div>
-            <div class="edu-status-badge completed">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Graduated</span>
+            <div class="edu-status-badge verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Verified Credential</span>
             </div>
           </div>
 
           <div class="edu-body">
-            <h3 class="edu-degree">High School Diploma</h3>
+            <h3 class="edu-degree">Become a Mobile Developer</h3>
             <div class="edu-school">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Lvea High School</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>Mind Luster &middot; Certified Member</span>
             </div>
             <div class="edu-period">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span>2019 — 2022</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Issued Dec 20, 2025 &middot; ID: 4ce33b3c</span>
             </div>
-            <p class="edu-desc">Completed General Secondary Education with solid foundation in advanced mathematics and scientific reasoning.</p>
-          </div>
+            <p class="edu-desc">Comprehensive training covering core mobile application architecture, component lifecycles, user interface state management, and native SDK integration.</p>
 
-          <!-- Dynamic Progress Bar -->
-          <div class="edu-progress-box">
-            <div class="edu-progress-top">
-              <span class="edu-progress-label">Academic Status</span>
-              <span class="edu-progress-val">100% Completed</span>
-            </div>
-            <div class="edu-progress-track">
-              <div class="edu-progress-bar bar-mint" style="--edu-w: 100%;"></div>
+            <div class="cert-thumb-wrap cert-click-preview" role="button" tabindex="0" aria-label="View Mobile Developer Certificate"
+                 data-cert-title="Become a Mobile Developer"
+                 data-cert-id="4ce33b3c"
+                 data-cert-date="Dec 20, 2025"
+                 data-cert-img="assets/certificate_mobile_dev.jpg"
+                 data-cert-pdf="">
+              <img src="assets/certificate_mobile_dev.jpg" alt="Become a Mobile Developer Certificate" class="cert-thumb-img" />
+              <div class="cert-thumb-overlay">
+                <span class="cert-view-badge">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <span>Preview Certificate</span>
+                </span>
+                <span class="cert-org-pill">Mind Luster</span>
+              </div>
             </div>
           </div>
 
           <div class="edu-tags">
-            <span class="edu-tag">Mathematics</span>
-            <span class="edu-tag">Science &amp; Tech</span>
-            <span class="edu-tag">Physics</span>
-            <span class="edu-tag">Baccalaureate II</span>
+            <span class="edu-tag">Mobile Arch</span>
+            <span class="edu-tag">App Lifecycle</span>
+            <span class="edu-tag">UI Composition</span>
+            <span class="edu-tag">State Mgmt</span>
+          </div>
+
+          <div class="cert-actions-row">
+            <button class="cert-action-btn btn-view cert-trigger-btn" type="button"
+                    data-cert-title="Become a Mobile Developer"
+                    data-cert-id="4ce33b3c"
+                    data-cert-date="Dec 20, 2025"
+                    data-cert-img="assets/certificate_mobile_dev.jpg"
+                    data-cert-pdf="">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>View Certificate</span>
+            </button>
+            <a href="https://www.mindluster.com" target="_blank" rel="noopener" class="cert-action-btn btn-pdf" title="Verify on MindLuster">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span>Verify</span>
+            </a>
           </div>
         </div>
 
-        <div class="edu-card glass reveal edu-card-accent" id="edu-cert">
+        <!-- Cert 2: Skills for Mobile Advertising Apps -->
+        <div class="edu-card glass reveal edu-card-primary" id="cert-mobile-ads">
+          <div class="edu-card-header">
+            <div class="edu-icon-wrap edu-icon-primary">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+            </div>
+            <div class="edu-status-badge verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Verified Credential</span>
+            </div>
+          </div>
+
+          <div class="edu-body">
+            <h3 class="edu-degree">Mobile Advertising Apps</h3>
+            <div class="edu-school">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>Mind Luster &middot; Certified Member</span>
+            </div>
+            <div class="edu-period">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Issued Dec 20, 2025 &middot; ID: 74dccc72</span>
+            </div>
+            <p class="edu-desc">Specialized credential in mobile advertising architectures, ad network integration, banner/interstitial mediation, and user retention monetization models.</p>
+
+            <div class="cert-thumb-wrap cert-click-preview" role="button" tabindex="0" aria-label="View Mobile Advertising Certificate"
+                 data-cert-title="Develop Skills for Mobile Advertising Apps"
+                 data-cert-id="74dccc72"
+                 data-cert-date="Dec 20, 2025"
+                 data-cert-img="assets/certificate_mobile_ads.jpg"
+                 data-cert-pdf="">
+              <img src="assets/certificate_mobile_ads.jpg" alt="Skills for Mobile Advertising Apps Certificate" class="cert-thumb-img" />
+              <div class="cert-thumb-overlay">
+                <span class="cert-view-badge">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <span>Preview Certificate</span>
+                </span>
+                <span class="cert-org-pill">Mind Luster</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-tags">
+            <span class="edu-tag">Ad Integration</span>
+            <span class="edu-tag">App Monetization</span>
+            <span class="edu-tag">SDK Mediation</span>
+            <span class="edu-tag">Retention Models</span>
+          </div>
+
+          <div class="cert-actions-row">
+            <button class="cert-action-btn btn-view cert-trigger-btn" type="button"
+                    data-cert-title="Develop Skills for Mobile Advertising Apps"
+                    data-cert-id="74dccc72"
+                    data-cert-date="Dec 20, 2025"
+                    data-cert-img="assets/certificate_mobile_ads.jpg"
+                    data-cert-pdf="">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>View Certificate</span>
+            </button>
+            <a href="https://www.mindluster.com" target="_blank" rel="noopener" class="cert-action-btn btn-pdf" title="Verify on MindLuster">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span>Verify</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 3: UML Unified Modeling Language -->
+        <div class="edu-card glass reveal edu-card-accent" id="cert-uml">
           <div class="edu-card-header">
             <div class="edu-icon-wrap edu-icon-accent">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
@@ -954,19 +1055,23 @@
           </div>
 
           <div class="edu-body">
-            <h3 class="edu-degree">UML Unified Modeling Language</h3>
+            <h3 class="edu-degree">UML Modeling Language</h3>
             <div class="edu-school">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
               <span>Mind Luster &middot; Certified Member</span>
             </div>
             <div class="edu-period">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span>Issued Dec 2025 &middot; ID: 6749668e</span>
+              <span>Issued Dec 24, 2025 &middot; ID: 6749668e</span>
             </div>
             <p class="edu-desc">Comprehensive certification in software architecture: class diagrams, use case modeling, sequence diagrams, and system design flows.</p>
 
-            <!-- Certificate Thumbnail Preview -->
-            <div class="cert-thumb-wrap" id="certThumbWrap" role="button" tabindex="0" aria-label="View Mind Luster UML Certificate">
+            <div class="cert-thumb-wrap cert-click-preview" role="button" tabindex="0" aria-label="View UML Certificate"
+                 data-cert-title="UML Unified Modeling Language"
+                 data-cert-id="6749668e"
+                 data-cert-date="Dec 24, 2025"
+                 data-cert-img="assets/certificate_uml.jpg"
+                 data-cert-pdf="assets/Mindluster_UML_Certificate.pdf">
               <img src="assets/certificate_uml.jpg" alt="Mind Luster UML Certificate - Reth Chanrith" class="cert-thumb-img" />
               <div class="cert-thumb-overlay">
                 <span class="cert-view-badge">
@@ -986,7 +1091,12 @@
           </div>
 
           <div class="cert-actions-row">
-            <button class="cert-action-btn btn-view" id="certModalTrigger" type="button">
+            <button class="cert-action-btn btn-view cert-trigger-btn" type="button"
+                    data-cert-title="UML Unified Modeling Language"
+                    data-cert-id="6749668e"
+                    data-cert-date="Dec 24, 2025"
+                    data-cert-img="assets/certificate_uml.jpg"
+                    data-cert-pdf="assets/Mindluster_UML_Certificate.pdf">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
               <span>View Certificate</span>
             </button>
@@ -996,7 +1106,10 @@
             </a>
           </div>
         </div>
+
       </div>
+    </div>
+  </section>
     </div>
   </section>
 
@@ -1182,7 +1295,7 @@
       </button>
       <div class="cert-modal-header">
         <h3 class="cert-modal-title" id="certModalTitle">UML Unified Modeling Language</h3>
-        <div class="cert-modal-sub">
+        <div class="cert-modal-sub" id="certModalSub">
           <span>Mind Luster Achievement</span>
           <span>&middot;</span>
           <span>Credential: <strong>No. 6749668e</strong></span>
@@ -1191,16 +1304,16 @@
         </div>
       </div>
       <div class="cert-modal-img-wrap">
-        <img src="assets/certificate_uml.jpg" alt="Mind Luster UML Certificate - Reth Chanrith" class="cert-modal-img" />
+        <img src="assets/certificate_uml.jpg" alt="Mind Luster UML Certificate - Reth Chanrith" class="cert-modal-img" id="certModalImg" />
       </div>
       <div class="cert-modal-footer">
         <span class="cert-modal-meta">Presented to Reth Chanrith &middot; Mind Luster Certified</span>
         <div class="cert-modal-btns">
-          <a href="assets/Mindluster_UML_Certificate.pdf" target="_blank" rel="noopener" class="btn btn-outline cert-action-btn">
+          <a href="assets/Mindluster_UML_Certificate.pdf" target="_blank" rel="noopener" class="btn btn-outline cert-action-btn" id="certModalPdfBtn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <span>Open PDF File</span>
           </a>
-          <a href="https://www.mindluster.com" target="_blank" rel="noopener" class="btn btn-primary cert-action-btn">
+          <a href="https://www.mindluster.com" target="_blank" rel="noopener" class="btn btn-primary cert-action-btn" id="certModalVerifyBtn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             <span>MindLuster.com</span>
           </a>
@@ -1209,6 +1322,6 @@
     </div>
   </div>
 
-  <script src="main.js?v=24"></script>
+  <script src="main.js?v=25"></script>
 </body>
 </html>
