@@ -2978,13 +2978,17 @@ body.loaded { opacity: 1; }
 }
 .gh-repo-name {
   font-family: var(--mono);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 8px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-word;
+  line-height: 1.35;
+}
+.gh-lang-sub {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--muted);
 }
 .gh-repo-desc {
   font-size: 0.77rem;

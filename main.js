@@ -24,9 +24,19 @@ const LANG_COLORS = {
 };
 
 // ── PAGE LOAD ──
-window.addEventListener('load', () => {
+function initPage() {
   document.body.classList.add('loaded');
   fetchGitHubData();
+  attachCalendarTooltips();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPage);
+} else {
+  initPage();
+}
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
 });
 
 // ── SCROLL PROGRESS BAR ──
@@ -572,6 +582,43 @@ function renderLanguages(langList) {
   langObs.observe(container);
 }
 
+function attachCalendarTooltips() {
+  const container = document.getElementById('ghCalendarContainer');
+  const tooltip = document.getElementById('ghTooltip');
+  if (!container || !tooltip) return;
+
+  container.querySelectorAll('.gh-cell').forEach(cell => {
+    cell.addEventListener('mouseenter', (e) => {
+      const count = parseInt(cell.dataset.count || '0', 10);
+      const dateStr = cell.dataset.date || '';
+      let prettyDate = dateStr;
+      if (dateStr) {
+        try {
+          const d = new Date(dateStr + 'T00:00:00');
+          prettyDate = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        } catch { /* use raw date */ }
+      }
+      const text = count === 0 
+        ? `No contributions on ${prettyDate}` 
+        : `${count} contribution${count === 1 ? '' : 's'} on ${prettyDate}`;
+      
+      tooltip.textContent = text;
+      tooltip.classList.add('active');
+      tooltip.style.left = e.clientX + 'px';
+      tooltip.style.top = (e.clientY - 12) + 'px';
+    });
+
+    cell.addEventListener('mousemove', (e) => {
+      tooltip.style.left = e.clientX + 'px';
+      tooltip.style.top = (e.clientY - 12) + 'px';
+    });
+
+    cell.addEventListener('mouseleave', () => {
+      tooltip.classList.remove('active');
+    });
+  });
+}
+
 // ── NATIVE DARK-THEME CONTRIBUTION CALENDAR ──
 function renderCalendar(contributions, totalCount = 174) {
   const container = document.getElementById('ghCalendarContainer');
@@ -652,42 +699,7 @@ function renderCalendar(contributions, totalCount = 174) {
   svgHtml += `</svg>`;
   container.innerHTML = svgHtml;
 
-  // Setup interactive tooltip
-  if (tooltip) {
-    container.querySelectorAll('.gh-cell').forEach(cell => {
-      cell.addEventListener('mouseenter', (e) => {
-        const count = parseInt(cell.dataset.count || '0', 10);
-        const dateStr = cell.dataset.date || '';
-        let prettyDate = dateStr;
-        if (dateStr) {
-          try {
-            const d = new Date(dateStr + 'T00:00:00');
-            prettyDate = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-          } catch { /* use raw date */ }
-        }
-        const text = count === 0 
-          ? `No contributions on ${prettyDate}` 
-          : `${count} contribution${count === 1 ? '' : 's'} on ${prettyDate}`;
-        
-        tooltip.textContent = text;
-        tooltip.classList.add('active');
-        positionTooltip(e);
-      });
-
-      cell.addEventListener('mousemove', (e) => {
-        positionTooltip(e);
-      });
-
-      cell.addEventListener('mouseleave', () => {
-        tooltip.classList.remove('active');
-      });
-    });
-
-    function positionTooltip(e) {
-      tooltip.style.left = e.clientX + 'px';
-      tooltip.style.top = (e.clientY - 12) + 'px';
-    }
-  }
+  attachCalendarTooltips();
 }
 
 // Generate an authentic dark calendar matching Reth Chanrith's real 174 GitHub contributions
