@@ -1207,7 +1207,7 @@ body.loaded { opacity: 1; }
 /* ── PROJECTS ── */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -1363,6 +1363,15 @@ body.loaded { opacity: 1; }
   color: #67e8f9;
   border: 1px solid rgba(6, 182, 212, 0.25);
 }
+.proj-badge-capstone {
+  background: rgba(129, 140, 248, 0.14);
+  color: #c4b5fd;
+  border: 1px solid rgba(129, 140, 248, 0.35);
+}
+.pill-fastapi  { background: rgba(0, 150, 136, 0.15); color: #4db6ac; border-color: rgba(0, 150, 136, 0.3); }
+.pill-python   { background: rgba(53, 114, 165, 0.15); color: #60a5fa; border-color: rgba(53, 114, 165, 0.3); }
+.pill-postgres { background: rgba(49, 120, 198, 0.15); color: #93c5fd; border-color: rgba(49, 120, 198, 0.3); }
+.pill-docker   { background: rgba(36, 150, 237, 0.15); color: #38bdf8; border-color: rgba(36, 150, 237, 0.3); }
 
 .proj-title {
   font-family: var(--display);

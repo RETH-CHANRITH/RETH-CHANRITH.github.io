@@ -5,9 +5,10 @@
 
 const GH_USER  = 'RETH-CHANRITH';
 const GH_REPOS = {
-  gym:    { owner: 'RETH-CHANRITH',  repo: 'gym_trainner_app' },
-  kampus: { owner: 'RETH-CHANRITH',  repo: 'KAMPUS'           },
-  eztalk: { owner: 'EZTalk-mobile',  repo: 'EZTalk'           },
+  jobagg: { owner: 'RETH-CHANRITH',  repo: 'project-practicum-blueprint' },
+  gym:    { owner: 'RETH-CHANRITH',  repo: 'gym_trainner_app'            },
+  kampus: { owner: 'RETH-CHANRITH',  repo: 'KAMPUS'                      },
+  eztalk: { owner: 'EZTalk-mobile',  repo: 'EZTalk'                      },
 };
 
 const LANG_COLORS = {
