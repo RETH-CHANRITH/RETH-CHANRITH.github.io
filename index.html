@@ -30,7 +30,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=27" />
+  <link rel="stylesheet" href="style.css?v=28" />
 </head>
 
 <body>
@@ -856,46 +856,91 @@
         <h2 class="section-title">Education &amp; <span class="gradient-text">Certifications</span></h2>
       </div>
 
-      <!-- Featured University Degree -->
-      <div class="edu-degree-card glass reveal" id="edu-rupp">
-        <div class="edu-degree-layout">
-          <div class="edu-degree-main">
-            <div class="edu-degree-header">
-              <div class="edu-icon-wrap edu-icon-primary">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              </div>
-              <div>
-                <span class="edu-status-badge in-progress">
-                  <span class="pulse-beacon"></span>
-                  <span>In Progress &middot; Year 3, Semester 2</span>
-                </span>
-                <h3 class="edu-degree-title">Bachelor of Science in Information Technology</h3>
-                <div class="edu-school">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  <span>Royal University of Phnom Penh (RUPP)</span>
-                </div>
-              </div>
+      <!-- Academic Education Grid -->
+      <div class="edu-academic-grid">
+        <!-- RUPP Bachelor's Degree -->
+        <div class="edu-card glass reveal edu-card-primary" id="edu-rupp">
+          <div class="edu-card-header">
+            <div class="edu-icon-wrap edu-icon-primary">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             </div>
-            <p class="edu-degree-desc">Focusing on Mobile Application Engineering, Software Architecture, Object-Oriented Design, and Distributed Cloud Systems. Building high-performance mobile apps with Flutter, Kotlin, and Firebase/Supabase.</p>
+            <div class="edu-status-badge in-progress">
+              <span class="pulse-beacon"></span>
+              <span>In Progress &middot; Year 3, Sem 2</span>
+            </div>
           </div>
 
-          <div class="edu-degree-side">
-            <div class="edu-progress-box">
-              <div class="edu-progress-top">
-                <span class="edu-progress-label">Academic Progress</span>
-                <span class="edu-progress-val">75% (Year 3/4)</span>
-              </div>
-              <div class="edu-progress-track">
-                <div class="edu-progress-bar" style="--edu-w: 75%;"></div>
-              </div>
+          <div class="edu-body">
+            <h3 class="edu-degree">Bachelor's in Information Technology</h3>
+            <div class="edu-school">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Royal University of Phnom Penh (RUPP)</span>
             </div>
-            <div class="edu-tags">
-              <span class="edu-tag">Mobile Dev</span>
-              <span class="edu-tag">Software Engineering</span>
-              <span class="edu-tag">OOP &amp; Architecture</span>
-              <span class="edu-tag">Database Systems</span>
-              <span class="edu-tag">Networking</span>
+            <div class="edu-period">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>2023 — Present &middot; Semester 2</span>
             </div>
+            <p class="edu-desc">Focusing on mobile app engineering, software architecture, OOP design, and distributed cloud systems with Flutter &amp; Kotlin.</p>
+          </div>
+
+          <div class="edu-progress-box">
+            <div class="edu-progress-top">
+              <span class="edu-progress-label">Academic Progress</span>
+              <span class="edu-progress-val">75% (Year 3/4)</span>
+            </div>
+            <div class="edu-progress-track">
+              <div class="edu-progress-bar" style="--edu-w: 75%;"></div>
+            </div>
+          </div>
+
+          <div class="edu-tags">
+            <span class="edu-tag">Mobile Dev</span>
+            <span class="edu-tag">Software Eng</span>
+            <span class="edu-tag">OOP &amp; Architecture</span>
+            <span class="edu-tag">Database Systems</span>
+          </div>
+        </div>
+
+        <!-- Lvea High School Diploma -->
+        <div class="edu-card glass reveal edu-card-secondary" id="edu-highschool">
+          <div class="edu-card-header">
+            <div class="edu-icon-wrap edu-icon-secondary">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="edu-status-badge completed">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Graduated</span>
+            </div>
+          </div>
+
+          <div class="edu-body">
+            <h3 class="edu-degree">High School Diploma</h3>
+            <div class="edu-school">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Lvea High School</span>
+            </div>
+            <div class="edu-period">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>2019 — 2022</span>
+            </div>
+            <p class="edu-desc">Completed General Secondary Education with solid foundation in advanced mathematics and scientific reasoning.</p>
+          </div>
+
+          <div class="edu-progress-box">
+            <div class="edu-progress-top">
+              <span class="edu-progress-label">Academic Status</span>
+              <span class="edu-progress-val">100% Completed</span>
+            </div>
+            <div class="edu-progress-track">
+              <div class="edu-progress-bar bar-mint" style="--edu-w: 100%;"></div>
+            </div>
+          </div>
+
+          <div class="edu-tags">
+            <span class="edu-tag">Mathematics</span>
+            <span class="edu-tag">Science &amp; Tech</span>
+            <span class="edu-tag">Physics</span>
+            <span class="edu-tag">Baccalaureate II</span>
           </div>
         </div>
       </div>
