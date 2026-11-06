@@ -30,7 +30,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=32" />
+  <link rel="stylesheet" href="style.css?v=33" />
 </head>
 
 <body>
@@ -342,29 +342,47 @@
   <!-- ── GITHUB ACTIVITY ── -->
   <section class="section github-act" id="github">
     <div class="container">
-      <div class="gh-top reveal">
-        <a href="https://github.com/RETH-CHANRITH" target="_blank" rel="noopener" class="gh-brand" id="ghBrandLink">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          <span>GitHub Activity</span>
-          <span class="gh-username">@RETH-CHANRITH</span>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gh-external-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      <div class="section-header reveal">
+        <span class="section-tag">Open Source &amp; Code Velocity</span>
+        <h2 class="section-title">GitHub <span class="gradient-text">Activity</span></h2>
+        <p class="section-subtitle">
+          Real-time public contributions, codebase architecture, and repository distribution across native mobile and backend systems.
+        </p>
+      </div>
+
+      <!-- Top Metrics & Profile Banner -->
+      <div class="gh-top-bar glass reveal">
+        <a href="https://github.com/RETH-CHANRITH" target="_blank" rel="noopener" class="gh-profile-badge" id="ghBrandLink">
+          <div class="gh-avatar-mini">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <div class="gh-user-info">
+            <span class="gh-user-handle">@RETH-CHANRITH</span>
+            <span class="gh-user-sub">github.com/RETH-CHANRITH</span>
+          </div>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="gh-ext"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
-        <div class="gh-live-stats">
-          <div class="gh-stat-item">
-            <span class="gh-stat-num" id="ghRepos">22</span>
-            <span class="gh-stat-label">Repos</span>
+        <div class="gh-stats-cluster">
+          <div class="gh-stat-box">
+            <span class="gh-stat-val" id="ghTotalContribStat">174+</span>
+            <span class="gh-stat-key">Contributions</span>
           </div>
-          <div class="gh-stat-item">
-            <span class="gh-stat-num" id="ghStars">0</span>
-            <span class="gh-stat-label">Stars</span>
+          <div class="gh-stat-sep"></div>
+          <div class="gh-stat-box">
+            <span class="gh-stat-val" id="ghRepos">22+</span>
+            <span class="gh-stat-key">Repositories</span>
           </div>
-          <div class="gh-stat-item">
-            <span class="gh-stat-num" id="ghFollowers">4</span>
-            <span class="gh-stat-label">Followers</span>
+          <div class="gh-stat-sep"></div>
+          <div class="gh-stat-box">
+            <span class="gh-stat-val" id="ghLanguagesCount">5+</span>
+            <span class="gh-stat-key">Languages</span>
           </div>
-          <div class="gh-stat-item">
-            <span class="gh-stat-num" id="ghFollowing">8</span>
-            <span class="gh-stat-label">Following</span>
+          <div class="gh-stat-sep"></div>
+          <div class="gh-stat-box">
+            <span class="gh-stat-val gh-status-active">
+              <span class="pulse-indicator"></span>Active
+            </span>
+            <span class="gh-stat-key">Velocity</span>
           </div>
         </div>
       </div>
@@ -375,7 +393,7 @@
           <div class="gh-card-head">
             <div class="gh-head-left">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span>Contribution Graph</span>
+              <span>Contribution Heatmap</span>
             </div>
             <span class="gh-total-contrib" id="ghTotalContrib">174 contributions in the last year</span>
           </div>
@@ -401,12 +419,84 @@
           <div class="gh-card-head">
             <div class="gh-head-left">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              <span>Language Usage</span>
+              <span>Language Distribution</span>
             </div>
+            <span class="gh-lang-badge">Production Code</span>
           </div>
           <div class="gh-lang-bars" id="langBars">
-            <!-- Dynamically populated -->
+            <!-- Dynamically populated via main.js -->
           </div>
+        </div>
+      </div>
+
+      <!-- Featured GitHub Repositories Showcase -->
+      <div class="gh-repos-section reveal">
+        <div class="gh-repos-header">
+          <div class="gh-repos-title-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            <h3>Featured Repositories</h3>
+          </div>
+          <a href="https://github.com/RETH-CHANRITH?tab=repositories" target="_blank" rel="noopener" class="gh-view-all-link">
+            <span>Explore all 22 repositories</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+        <div class="gh-repos-grid">
+          <!-- 1. project-practicum-blueprint -->
+          <a href="https://github.com/RETH-CHANRITH/project-practicum-blueprint" target="_blank" rel="noopener" class="gh-repo-card glass">
+            <div class="gh-repo-top">
+              <span class="gh-repo-badge capstone-badge">Senior Capstone</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gh-repo-arrow"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+            </div>
+            <h4 class="gh-repo-name">project-practicum-blueprint</h4>
+            <p class="gh-repo-desc">AI-assisted job aggregator mobile application with FastAPI core engine, normalized 3NF PostgreSQL schemas, and Docker microservices.</p>
+            <div class="gh-repo-meta">
+              <span class="gh-repo-lang"><span class="lang-dot" style="background: #3776AB;"></span>Python (99.5%)</span>
+              <span class="gh-repo-tag">FastAPI · Docker</span>
+            </div>
+          </a>
+
+          <!-- 2. KAMPUS -->
+          <a href="https://github.com/RETH-CHANRITH/KAMPUS" target="_blank" rel="noopener" class="gh-repo-card glass">
+            <div class="gh-repo-top">
+              <span class="gh-repo-badge native-badge">Native Android</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gh-repo-arrow"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+            </div>
+            <h4 class="gh-repo-name">KAMPUS</h4>
+            <p class="gh-repo-desc">Campus social platform for RUPP students featuring real-time feed, peer discovery, live status, and WebRTC audio/video calling.</p>
+            <div class="gh-repo-meta">
+              <span class="gh-repo-lang"><span class="lang-dot" style="background: #7F52FF;"></span>Kotlin</span>
+              <span class="gh-repo-tag">Compose · WebRTC</span>
+            </div>
+          </a>
+
+          <!-- 3. GYM_TRAINER -->
+          <a href="https://github.com/RETH-CHANRITH/GYM_TRAINER" target="_blank" rel="noopener" class="gh-repo-card glass">
+            <div class="gh-repo-top">
+              <span class="gh-repo-badge flutter-badge">Cross-Platform</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gh-repo-arrow"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+            </div>
+            <h4 class="gh-repo-name">GYM_TRAINER</h4>
+            <p class="gh-repo-desc">Fitness booking and personal trainer discovery mobile app with in-app wallet balance, session scheduling, and Supabase BaaS.</p>
+            <div class="gh-repo-meta">
+              <span class="gh-repo-lang"><span class="lang-dot" style="background: #00B4AB;"></span>Dart</span>
+              <span class="gh-repo-tag">Flutter · Supabase</span>
+            </div>
+          </a>
+
+          <!-- 4. Vehicle-Tracking-System -->
+          <a href="https://github.com/RETH-CHANRITH/Vehicle-Tracking-System" target="_blank" rel="noopener" class="gh-repo-card glass">
+            <div class="gh-repo-top">
+              <span class="gh-repo-badge web-badge">Web &amp; Telemetry</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gh-repo-arrow"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+            </div>
+            <h4 class="gh-repo-name">Vehicle-Tracking-System</h4>
+            <p class="gh-repo-desc">Real-time GPS fleet tracking interface with live telemetry endpoints and network API integration.</p>
+            <div class="gh-repo-meta">
+              <span class="gh-repo-lang"><span class="lang-dot" style="background: #F7DF1E;"></span>JavaScript</span>
+              <span class="gh-repo-tag">REST API · Telemetry</span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -1660,6 +1750,6 @@
     </div>
   </div>
 
-  <script src="main.js?v=27"></script>
+  <script src="main.js?v=28"></script>
 </body>
 </html>

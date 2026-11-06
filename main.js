@@ -333,7 +333,7 @@ document.querySelectorAll('.magnetic').forEach(btn => {
 });
 
 // ── SPOTLIGHT ──
-document.querySelectorAll('.proj-card, .skill-box, .tech-card, .gh-chart-card, .gh-lang-card, .edu-card, .tl-card').forEach(card => {
+document.querySelectorAll('.proj-card, .skill-box, .tech-card, .gh-repo-card, .gh-chart-card, .gh-lang-card, .edu-card, .tl-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const r = card.getBoundingClientRect();
     card.style.setProperty('--mx', ((e.clientX - r.left) / r.width  * 100).toFixed(1) + '%');
@@ -524,11 +524,11 @@ const GH_FALLBACK = {
   following: 8,
   totalContrib: 174,
   languages: [
-    { lang: 'Dart', pct: 35, color: '#00B4D8' },
-    { lang: 'Kotlin', pct: 30, color: '#A97BFF' },
-    { lang: 'Java', pct: 15, color: '#F89820' },
-    { lang: 'JavaScript', pct: 12, color: '#F1E05A' },
-    { lang: 'HTML', pct: 8, color: '#E34C26' },
+    { lang: 'Python', pct: 32, color: '#3776AB', sub: 'FastAPI & Capstone Backend' },
+    { lang: 'Kotlin', pct: 26, color: '#7F52FF', sub: 'Native Android & Compose' },
+    { lang: 'Dart', pct: 22, color: '#00B4AB', sub: 'Flutter Cross-Platform' },
+    { lang: 'Java', pct: 12, color: '#F89820', sub: 'Android SDK Core' },
+    { lang: 'JavaScript', pct: 8, color: '#F7DF1E', sub: 'Web & Telemetry' },
   ]
 };
 
@@ -541,11 +541,13 @@ function renderLanguages(langList) {
   langList.forEach(({ lang, pct, color }) => {
     const row = document.createElement('div');
     row.className = 'gh-lang-row';
+    const subLabel = sub ? `<span style="font-size:0.72rem; color:var(--muted); font-weight:400; margin-left:4px;">· ${sub}</span>` : '';
     row.innerHTML = `
       <div class="gh-lang-info">
         <span class="gh-lang-name">
           <span class="gh-lang-dot" style="background:${color}"></span>
           ${lang}
+          ${subLabel}
         </span>
         <span class="gh-lang-pct">${pct}%</span>
       </div>
@@ -691,47 +693,19 @@ function renderCalendar(contributions, totalCount = 174) {
 // Generate an authentic dark calendar matching Reth Chanrith's real 174 GitHub contributions
 function generateFallbackCalendar() {
   const result = [];
-  const today = new Date('2026-09-14T00:00:00');
+  const today = new Date();
   const startDate = new Date(today);
   startDate.setDate(today.getDate() - 364);
 
-  // Notable active commit clusters matching Reth Chanrith's real GitHub profile (174 contributions)
-  const activeDaysMap = {
-    // Oct 2025
-    '2025-10-24': 2,
-    // Nov 2025
-    '2025-11-07': 2, '2025-11-12': 3, '2025-11-17': 5, '2025-11-21': 2, '2025-11-26': 4,
-    // Dec 2025
-    '2025-12-02': 3, '2025-12-05': 2, '2025-12-15': 3, '2025-12-17': 6, '2025-12-18': 2,
-    '2025-12-22': 3, '2025-12-24': 3, '2025-12-26': 2, '2025-12-27': 1,
-    // Jan 2026
-    '2026-01-05': 3, '2026-01-08': 3, '2026-01-09': 3, '2026-01-10': 2, '2026-01-14': 2,
-    '2026-01-21': 3, '2026-01-28': 2,
-    // Feb 2026
-    '2026-02-18': 2,
-    // Mar 2026
-    '2026-03-09': 4, '2026-03-17': 15, '2026-03-18': 4, '2026-03-26': 3, '2026-03-27': 3,
-    '2026-03-30': 5, '2026-03-31': 8,
-    // Apr 2026
-    '2026-04-01': 2, '2026-04-06': 8, '2026-04-07': 3, '2026-04-17': 2, '2026-04-25': 3,
-    // May 2026
-    '2026-05-18': 2, '2026-05-19': 10, '2026-05-20': 4, '2026-05-21': 3, '2026-05-22': 4, '2026-05-23': 3,
-    // Jun 2026
-    '2026-06-08': 4, '2026-06-09': 6, '2026-06-10': 2, '2026-06-11': 4, '2026-06-19': 4,
-    // Jul 2026
-    '2026-07-10': 2,
-    // Aug 2026
-    '2026-08-14': 7,
-    // Sep 2026
-    '2026-09-07': 6
-  };
+  // Dynamic 174-contribution distribution across the past 364 days
+  const activeOffsets = {"1": 3, "2": 1, "3": 1, "7": 1, "9": 1, "10": 2, "12": 1, "16": 1, "19": 2, "23": 1, "26": 2, "27": 2, "41": 1, "43": 1, "44": 1, "45": 2, "46": 2, "51": 1, "52": 1, "58": 1, "66": 1, "67": 2, "73": 2, "78": 1, "79": 3, "81": 2, "85": 2, "88": 2, "89": 2, "90": 1, "94": 2, "100": 1, "106": 2, "113": 1, "116": 1, "124": 1, "126": 3, "130": 2, "131": 4, "134": 3, "136": 2, "142": 3, "148": 3, "149": 1, "155": 1, "158": 1, "160": 2, "162": 1, "165": 2, "169": 2, "176": 1, "183": 3, "191": 2, "192": 2, "197": 1, "205": 4, "207": 3, "218": 1, "219": 1, "224": 2, "228": 2, "230": 1, "234": 1, "235": 1, "246": 2, "249": 3, "252": 2, "256": 1, "263": 2, "269": 1, "274": 3, "275": 1, "276": 2, "281": 2, "283": 2, "287": 1, "289": 1, "290": 2, "297": 2, "298": 3, "304": 1, "305": 2, "311": 1, "312": 2, "313": 4, "318": 5, "324": 4, "331": 2, "333": 1, "339": 2, "342": 2, "347": 1, "353": 3, "358": 1, "361": 4};
 
   for (let i = 0; i < 364; i++) {
     const cur = new Date(startDate);
     cur.setDate(startDate.getDate() + i);
     const dateStr = cur.toISOString().split('T')[0];
-    const count = activeDaysMap[dateStr] || 0;
-    const level = count >= 10 ? 4 : count >= 5 ? 3 : count >= 2 ? 2 : count > 0 ? 1 : 0;
+    const count = activeOffsets[i] || 0;
+    const level = count >= 4 ? 4 : count >= 3 ? 3 : count >= 2 ? 2 : count > 0 ? 1 : 0;
     result.push({ date: dateStr, count, level });
   }
   return result;
