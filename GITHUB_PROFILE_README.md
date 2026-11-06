@@ -1,115 +1,90 @@
-<h1 align="center">
-  <img src="https://raw.githubusercontent.com/RETH-CHANRITH/RETH-CHANRITH.github.io/main/assets/android_logo.png" width="36" height="36" alt="Android Mascot" style="vertical-align: middle;"/>
-  Hi, I'm Reth Chanrith 👋
-</h1>
+# Reth Chanrith
 
-<p align="center">
-  <strong>🎓 Year 4 (Semester 1) IT Engineering Student at Royal University of Phnom Penh (RUPP)</strong><br/>
-  📱 <strong>Junior Mobile Developer</strong> &middot; Flutter &bull; Kotlin &bull; Jetpack Compose &bull; FastAPI &bull; Firebase<br/>
-  🚀 <em>Open to Mobile Application Development Internship Opportunities</em>
+<p align="left">
+  <strong>Year 4 IT Engineering Student</strong> at <strong>Royal University of Phnom Penh (RUPP)</strong><br/>
+  Specializing in <strong>Native Android (Kotlin & Jetpack Compose)</strong> and <strong>Cross-Platform Mobile (Flutter)</strong> with <strong>FastAPI</strong> backends.
 </p>
 
-<p align="center">
+<p align="left">
   <a href="https://reth-chanrith.vercel.app">
-    <img src="https://img.shields.io/badge/🌐_Portfolio-reth--chanrith.vercel.app-00ffa3?style=for-the-badge&logo=vercel&logoColor=black" alt="Portfolio"/>
+    <img src="https://img.shields.io/badge/Live_Portfolio-reth--chanrith.vercel.app-00ffa3?style=flat-square&logo=vercel&logoColor=black" alt="Portfolio"/>
   </a>
   <a href="https://reth-chanrith.vercel.app/assets/Reth_Chanrith_CV.pdf">
-    <img src="https://img.shields.io/badge/📄_Resume-Download_CV-6366f1?style=for-the-badge" alt="Resume"/>
+    <img src="https://img.shields.io/badge/Resume-Download_CV-6366f1?style=flat-square&logo=googledocs&logoColor=white" alt="Resume"/>
   </a>
   <a href="https://www.linkedin.com/in/chan-rith-323282300/">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   <a href="https://t.me/mechanrith">
-    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=00FFA3&center=true&vCenter=true&width=500&lines=Junior+Mobile+Developer;Flutter+%26+Dart+Cross-Platform;Native+Android+%26+Jetpack+Compose;FastAPI+%26+Python+Microservices;Building+Real-Time+WebRTC+Apps;Open+to+Internship+Opportunities+🚀"/>
-</p>
-
----
-
-### 🧑‍💻 About Me
-
-- 🎓 **Fourth-year, first-semester IT Engineering student** at **Royal University of Phnom Penh (RUPP)**.
-- 📱 Focused on **Mobile Application Development** (Native Android with Kotlin/Java & Cross-Platform with Flutter).
-- ⚙️ Skilled in backend integration using **FastAPI (Python)**, **Firebase**, and **Supabase**.
-- 🛠️ Hands-on experience implementing **WebRTC audio/video calling**, **push notifications**, and **real-time chat**.
-- 🎯 Currently seeking a **Mobile Application Development Internship** to contribute to production apps and grow with an engineering team.
-
----
-
-### 🚀 Standout & Capstone Projects
-
-| Project | Tech Stack | Highlights | Repository |
-| :--- | :--- | :--- | :---: |
-| 🌟 **JobMatch Cambodia** <br/>*(Year 4 Capstone &middot; In Progress)* | `Flutter` &middot; `FastAPI` &middot; `Python` &middot; `AI` | AI-assisted job aggregation & recommendation platform helping Cambodian job seekers discover relevant jobs. | [View Code](https://github.com/RETH-CHANRITH) |
-| 🏋️‍♂️ **Gym Trainer Booking App** | `Flutter` &middot; `Firebase` &middot; `Supabase` | Trainer discovery, scheduling, wallet payment module, and real-time client-trainer messaging. | [Repo ↗](https://github.com/RETH-CHANRITH/gym_trainner_app) |
-| 🎓 **KAMPUS — Campus Social App** | `Kotlin` &middot; `Jetpack Compose` &middot; `WebRTC` | Community social feed, friend requests, online status, and peer-to-peer WebRTC video calling. | [Repo ↗](https://github.com/RETH-CHANRITH/KAMPUS-APP) |
-| 💬 **EZTalk — Mobile Chat App** | `Java` &middot; `Firebase` &middot; `WebRTC` | 1-on-1 and group messaging with push notifications, file uploads, and WebRTC audio/video. | [Repo ↗](https://github.com/EZTalk-mobile/EZTalk) |
-
----
-
-### 🛠️ Tech Stack & Skills
-
-<p align="left">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=kotlin,flutter,dart,androidstudio,java,python,fastapi,firebase,supabase,mysql,postman,figma,git,github&perline=14" alt="My Tech Stack"/>
-  </a>
-</p>
-
-- **Mobile Development**: Flutter, Dart, Android SDK, Kotlin, Jetpack Compose, Java
-- **Backend & APIs**: FastAPI, Python, RESTful APIs, WebRTC, Firebase, Supabase, MySQL
-- **Tooling & Workflow**: Android Studio, VS Code, Git, GitHub, Postman, Figma
-
----
-
-### 📊 GitHub Activity & Statistics
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=RETH-CHANRITH&show_icons=true&theme=tokyonight&hide_border=true&bg_color=07090e&title_color=00ffa3&icon_color=38bdf8&text_color=94a3b8" width="49%" alt="GitHub Stats"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RETH-CHANRITH&layout=compact&theme=tokyonight&hide_border=true&bg_color=07090e&title_color=00ffa3&text_color=94a3b8" width="45%" alt="Top Languages"/>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=RETH-CHANRITH&theme=tokyonight&hide_border=true&background=07090e&ring=00ffa3&fire=00ffa3&currStreakLabel=00ffa3" alt="GitHub Streak" width="95%"/>
-</p>
-
----
-
-### 🌍 Beyond Coding
-
-- 🏋️ **Fitness & Gym**
-- 📚 **Tech Research & Articles**
-- 🎧 **Music & Podcasts**
-- 🎬 **Movies**
-
----
-
-### 📬 Connect With Me
-
-<p align="left">
-  <a href="https://reth-chanrith.vercel.app">
-    <img src="https://img.shields.io/badge/Portfolio-reth--chanrith.vercel.app-00ffa3?style=for-the-badge&logo=vercel&logoColor=black"/>
-  </a>
-  <a href="https://www.linkedin.com/in/chan-rith-323282300/">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
-  </a>
-  <a href="https://t.me/mechanrith">
-    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Telegram-Chat-229ED9?style=flat-square&logo=telegram&logoColor=white" alt="Telegram"/>
   </a>
   <a href="mailto:rithc512@gmail.com">
-    <img src="https://img.shields.io/badge/Email-rithc512@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
-  </a>
-  <a href="https://www.facebook.com/udeu65l2i2">
-    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white"/>
-  </a>
-  <a href="https://www.instagram.com/chan_rith_xie">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Email-Contact-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/>
   </a>
 </p>
 
+---
+
+### 👨‍💻 Engineering Profile
+
+- 🎓 **Education**: Year 4, Semester 1 — B.S. in Information Technology & Engineering, Royal University of Phnom Penh (RUPP).
+- 🎯 **Primary Focus**: High-performance mobile applications with clean architecture (MVVM, Repository Pattern).
+- 🛠️ **Real-Time & Media**: Hands-on implementation of WebRTC peer-to-peer video/audio calling and push messaging.
+- ⚙️ **Full-Stack Capability**: Mobile frontends backed by asynchronous Python microservices (FastAPI) and cloud databases (Supabase, Firebase).
+- 🚀 **Objective**: Seeking a **Mobile Application Development Internship** to deliver reliable, production-ready code.
+
+---
+
+### 📱 Featured Projects
+
+#### 🌟 [JobMatch Cambodia](https://github.com/RETH-CHANRITH) *(Senior Capstone &middot; Active Development)*
+> **AI-Assisted Job Aggregation & Recommendation Mobile Application**
+- Aggregates real-time Cambodian job listings with automated deduplication and normalization.
+- Machine-learning recommendation engine matching candidate profiles to relevant vacancies.
+- **Stack**: `Flutter` &middot; `Dart` &middot; `FastAPI` &middot; `Python` &middot; `PostgreSQL`
+
+#### 🏋️‍♂️ [Gym Trainer Booking App](https://github.com/RETH-CHANRITH/gym_trainner_app)
+> **Fitness Trainer Scheduling & Digital Payment System**
+- Complete authentication lifecycle (OAuth & email), fitness profile onboarding, and trainer discovery.
+- In-app session booking engine with synchronized calendars and integrated wallet payment workflows.
+- Real-time client-to-trainer messaging channel with push notification delivery.
+- **Stack**: `Flutter` &middot; `Dart` &middot; `Firebase` &middot; `Supabase`
+
+#### 🎓 [KAMPUS — Campus Social App](https://github.com/RETH-CHANRITH/KAMPUS-APP)
+> **Native Android Community Platform with Live WebRTC Video**
+- Campus-wide interactive feed, student circles, event scheduling, and real-time community engagement.
+- Integrated WebRTC mesh architecture for high-quality peer-to-peer audio and video calls.
+- Live active presence indicators and administrative moderation tooling.
+- **Stack**: `Kotlin` &middot; `Jetpack Compose` &middot; `WebRTC` &middot; `Firebase`
+
+#### 💬 [EZTalk — Mobile Chat App](https://github.com/EZTalk-mobile/EZTalk)
+> **Real-Time Communication & Media Sharing Application**
+- Low-latency one-on-one and group messaging channels with end-to-end cloud storage for media attachments.
+- WebRTC integration for direct peer audio/video calling.
+- **Stack**: `Java` &middot; `Android SDK` &middot; `Firebase Realtime DB` &middot; `WebRTC`
+
+---
+
+### 🛠️ Technical Skills
+
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=kotlin,flutter,dart,androidstudio,java,python,fastapi,firebase,supabase,mysql,postman,figma,git,github&perline=14" alt="Tech Stack Icons" />
+</p>
+
+- **Mobile Technologies**: Flutter, Dart, Kotlin, Jetpack Compose, Java, Android SDK, XML
+- **Backend & APIs**: FastAPI, Python, REST APIs, WebRTC, Firebase, Supabase, MySQL
+- **DevOps & Engineering Tools**: Android Studio, Git, GitHub, Postman, Figma, Linux
+
+---
+
+### 🌐 Live Portfolio & Interactive Stats
+
+My full interactive 364-day contribution graph, codebase analytics, verified certificates, and live app demos are hosted on my personal portfolio:
+
+👉 **[reth-chanrith.vercel.app ↗](https://reth-chanrith.vercel.app)** *(also available at [reth-chanrith.github.io](https://reth-chanrith.github.io/))*
+
+---
+
 <p align="center">
-  ⭐ <em>Thank you for visiting! Feel free to explore my repositories or get in touch for internship opportunities.</em>
+  <sub>Designed &amp; Maintained by <strong>Reth Chanrith</strong> &middot; Phnom Penh, Cambodia</sub>
 </p>
