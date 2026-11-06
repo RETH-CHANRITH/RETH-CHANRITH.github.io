@@ -30,7 +30,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=31" />
+  <link rel="stylesheet" href="style.css?v=32" />
 </head>
 
 <body>
@@ -418,137 +418,384 @@
     <span class="section-num">02</span>
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">What I work with</span>
+        <span class="section-tag">Engineering Tooling &amp; Production Technologies</span>
         <h2 class="section-title">Tech <span class="gradient-text">Stack</span></h2>
+        <p class="section-subtitle">
+          Production-grade engineering stack spanning native Android, cross-platform mobile, high-performance async APIs, normalized 3NF relational data architecture, and certified system modeling.
+        </p>
       </div>
-      <div class="skills-grid">
 
-        <!-- Mobile Dev -->
-        <div class="skill-box glass reveal">
-          <div class="skill-box-header">
-            <span class="skill-box-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            </span>
-            <h3>Mobile Development</h3>
+      <!-- Quick Metrics Bar -->
+      <div class="tech-metrics-bar glass reveal">
+        <div class="tm-item">
+          <span class="tm-val">4</span>
+          <span class="tm-label">Core Domains</span>
+        </div>
+        <div class="tm-divider"></div>
+        <div class="tm-item">
+          <span class="tm-val">18</span>
+          <span class="tm-label">Production Technologies</span>
+        </div>
+        <div class="tm-divider"></div>
+        <div class="tm-item">
+          <span class="tm-val">100%</span>
+          <span class="tm-label">Clean Architecture &amp; UML Certified</span>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="tech-filter-bar reveal">
+        <button class="tech-filter-btn active" data-filter="all">
+          <span class="filter-dot"></span>
+          <span>All Technologies</span>
+          <span class="filter-count">18</span>
+        </button>
+        <button class="tech-filter-btn" data-filter="mobile">
+          <span class="filter-dot"></span>
+          <span>Mobile Dev</span>
+          <span class="filter-count">5</span>
+        </button>
+        <button class="tech-filter-btn" data-filter="backend">
+          <span class="filter-dot"></span>
+          <span>Backend &amp; Database</span>
+          <span class="filter-count">6</span>
+        </button>
+        <button class="tech-filter-btn" data-filter="devops">
+          <span class="filter-dot"></span>
+          <span>DevOps &amp; Tools</span>
+          <span class="filter-count">4</span>
+        </button>
+        <button class="tech-filter-btn" data-filter="arch">
+          <span class="filter-dot"></span>
+          <span>Architecture &amp; Protocols</span>
+          <span class="filter-count">3</span>
+        </button>
+      </div>
+
+      <!-- Modern Dynamic Tech Grid -->
+      <div class="tech-grid" id="techGrid">
+        <div class="tech-card glass reveal" data-category="mobile" style="--brand-color: #02569B; --brand-glow: rgba(2, 86, 155, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #02569B18; border-color: #02569B45;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.37zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Flutter</h3>
+                <span class="tech-badge badge-primary">Primary Framework</span>
+              </div>
+              <span class="tech-sub">Cross-Platform UI Engine</span>
+            </div>
           </div>
-          <div class="skill-rings">
-            <div class="ring-skill violet">
-              <div class="ring-chart-wrap">
-                <svg class="ring-svg" width="86" height="86" viewBox="0 0 86 86">
-                  <circle class="ring-bg-disc" cx="43" cy="43" r="34" />
-                  <circle class="ring-track" cx="43" cy="43" r="34" stroke-width="6" />
-                  <circle class="ring-fill ring-fill-violet" data-pct="85" cx="43" cy="43" r="34" stroke-width="6" stroke-dasharray="0 213.6" />
-                </svg>
-                <div class="ring-center">
-                  <span class="ring-skill-pct" data-ring-pct="85">0%</span>
-                </div>
-              </div>
-              <div class="ring-skill-meta">
-                <span class="ring-skill-label">Flutter</span>
-                <span class="ring-skill-badge">Cross-Platform</span>
-              </div>
-            </div>
-
-            <div class="ring-skill mint">
-              <div class="ring-chart-wrap">
-                <svg class="ring-svg" width="86" height="86" viewBox="0 0 86 86">
-                  <circle class="ring-bg-disc" cx="43" cy="43" r="34" />
-                  <circle class="ring-track" cx="43" cy="43" r="34" stroke-width="6" />
-                  <circle class="ring-fill ring-fill-mint" data-pct="80" cx="43" cy="43" r="34" stroke-width="6" stroke-dasharray="0 213.6" />
-                </svg>
-                <div class="ring-center">
-                  <span class="ring-skill-pct" data-ring-pct="80">0%</span>
-                </div>
-              </div>
-              <div class="ring-skill-meta">
-                <span class="ring-skill-label">Kotlin</span>
-                <span class="ring-skill-badge">Native Android</span>
-              </div>
-            </div>
-
-            <div class="ring-skill violet">
-              <div class="ring-chart-wrap">
-                <svg class="ring-svg" width="86" height="86" viewBox="0 0 86 86">
-                  <circle class="ring-bg-disc" cx="43" cy="43" r="34" />
-                  <circle class="ring-track" cx="43" cy="43" r="34" stroke-width="6" />
-                  <circle class="ring-fill ring-fill-violet" data-pct="75" cx="43" cy="43" r="34" stroke-width="6" stroke-dasharray="0 213.6" />
-                </svg>
-                <div class="ring-center">
-                  <span class="ring-skill-pct" data-ring-pct="75">0%</span>
-                </div>
-              </div>
-              <div class="ring-skill-meta">
-                <span class="ring-skill-label">Compose</span>
-                <span class="ring-skill-badge">Modern UI</span>
-              </div>
-            </div>
-
-            <div class="ring-skill mint">
-              <div class="ring-chart-wrap">
-                <svg class="ring-svg" width="86" height="86" viewBox="0 0 86 86">
-                  <circle class="ring-bg-disc" cx="43" cy="43" r="34" />
-                  <circle class="ring-track" cx="43" cy="43" r="34" stroke-width="6" />
-                  <circle class="ring-fill ring-fill-mint" data-pct="70" cx="43" cy="43" r="34" stroke-width="6" stroke-dasharray="0 213.6" />
-                </svg>
-                <div class="ring-center">
-                  <span class="ring-skill-pct" data-ring-pct="70">0%</span>
-                </div>
-              </div>
-              <div class="ring-skill-meta">
-                <span class="ring-skill-label">Java / XML</span>
-                <span class="ring-skill-badge">Core Android</span>
-              </div>
-            </div>
+          <p class="tech-desc">Multi-platform mobile app development with reactive state management, custom physics animations, and fluid UI rendering.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Dart</span><span class="tech-tag">Provider / Bloc</span><span class="tech-tag">Material 3</span>
           </div>
         </div>
-
-        <!-- Languages -->
-        <div class="skill-box glass reveal">
-          <div class="skill-box-header">
-            <span class="skill-box-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </span>
-            <h3>Languages</h3>
+        <div class="tech-card glass reveal" data-category="mobile" style="--brand-color: #7F52FF; --brand-glow: rgba(127, 82, 255, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #7F52FF18; border-color: #7F52FF45;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 24H0V0h24L12 12z"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Kotlin</h3>
+                <span class="tech-badge badge-accent">Native Android</span>
+              </div>
+              <span class="tech-sub">Modern Android & Coroutines</span>
+            </div>
           </div>
-          <div class="skill-list">
-            <div class="sk"><div class="sk-top"><span class="sk-name">Dart</span><span class="sk-pct">80%</span></div><div class="sk-bar"><div class="sk-fill" style="--w:80%"></div></div></div>
-            <div class="sk"><div class="sk-top"><span class="sk-name">Kotlin</span><span class="sk-pct">78%</span></div><div class="sk-bar"><div class="sk-fill" style="--w:78%"></div></div></div>
-            <div class="sk"><div class="sk-top"><span class="sk-name">Java</span><span class="sk-pct">72%</span></div><div class="sk-bar"><div class="sk-fill" style="--w:72%"></div></div></div>
-          </div>
-        </div>
-
-        <!-- Backend -->
-        <div class="skill-box glass reveal">
-          <div class="skill-box-header">
-            <span class="skill-box-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            </span>
-            <h3>Backend &amp; Database</h3>
-          </div>
-          <div class="skill-list">
-            <div class="sk"><div class="sk-top"><span class="sk-name">Firebase</span><span class="sk-pct">82%</span></div><div class="sk-bar"><div class="sk-fill" style="--w:82%"></div></div></div>
-            <div class="sk"><div class="sk-top"><span class="sk-name">Supabase</span><span class="sk-pct">70%</span></div><div class="sk-bar"><div class="sk-fill" style="--w:70%"></div></div></div>
-            <div class="sk"><div class="sk-top"><span class="sk-name">MySQL</span><span class="sk-pct">65%</span></div><div class="sk-bar"><div class="sk-fill" style="--w:65%"></div></div></div>
+          <p class="tech-desc">Modern native Android development leveraging coroutines, Kotlin Flow, and clean architectural patterns.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Coroutines</span><span class="tech-tag">Flow</span><span class="tech-tag">KTX</span><span class="tech-tag">Android SDK</span>
           </div>
         </div>
-
-        <!-- Tools -->
-        <div class="skill-box glass reveal">
-          <div class="skill-box-header">
-            <span class="skill-box-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-            </span>
-            <h3>Tools &amp; Technologies</h3>
+        <div class="tech-card glass reveal" data-category="mobile" style="--brand-color: #4285F4; --brand-glow: rgba(66, 133, 244, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #4285F418; border-color: #4285F445;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Jetpack Compose</h3>
+                <span class="tech-badge badge-cyan">Declarative UI</span>
+              </div>
+              <span class="tech-sub">Modern Android UI Toolkit</span>
+            </div>
           </div>
-          <div class="tools-wrap">
-            <span class="tool">Android Studio</span>
-            <span class="tool">VS Code</span>
-            <span class="tool">Git &amp; GitHub</span>
-            <span class="tool">Figma</span>
-            <span class="tool">Postman</span>
-            <span class="tool">REST API</span>
-            <span class="tool">WebRTC</span>
-            <span class="tool">UML</span>
+          <p class="tech-desc">Reactive declarative UI engineering with predictable unidirectional state flow and composable architecture.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">State Hoisting</span><span class="tech-tag">Compose Nav</span><span class="tech-tag">Material 3</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="mobile" style="--brand-color: #0175C2; --brand-glow: rgba(1, 117, 194, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #0175C218; border-color: #0175C245;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4.1 12l7.9-7.9 7.9 7.9-7.9 7.9L4.1 12zm3.8 0l4.1 4.1 4.1-4.1-4.1-4.1-4.1 4.1z" fill="currentColor"/><path d="M12 2.5l9.5 9.5-9.5 9.5L2.5 12 12 2.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Dart</h3>
+                <span class="tech-badge badge-default">Client Language</span>
+              </div>
+              <span class="tech-sub">Type-Safe Async Execution</span>
+            </div>
+          </div>
+          <p class="tech-desc">Sound null safety, asynchronous stream pipelines, and high-performance compilation for cross-platform apps.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Async / Await</span><span class="tech-tag">Streams</span><span class="tech-tag">OOP</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="mobile" style="--brand-color: #F89820; --brand-glow: rgba(248, 152, 32, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #F8982018; border-color: #F8982045;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Java / Android SDK</h3>
+                <span class="tech-badge badge-amber">Core Foundation</span>
+              </div>
+              <span class="tech-sub">Android SDK & Architecture</span>
+            </div>
+          </div>
+          <p class="tech-desc">Robust Android lifecycle management, Activities, Services, Broadcast Receivers, and XML layouts.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Activities</span><span class="tech-tag">Services</span><span class="tech-tag">XML Layouts</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="backend" style="--brand-color: #05998B; --brand-glow: rgba(5, 153, 139, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #05998B18; border-color: #05998B45;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M11 6l-3 7h4l-1 5 5-7h-4l1-5z" fill="currentColor"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">FastAPI</h3>
+                <span class="tech-badge badge-mint">High-Perf API</span>
+              </div>
+              <span class="tech-sub">Async Python Web Framework</span>
+            </div>
+          </div>
+          <p class="tech-desc">Asynchronous microservices and RESTful API backends with Pydantic schema validation and automatic OpenAPI docs.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Pydantic V2</span><span class="tech-tag">AsyncIO</span><span class="tech-tag">Swagger</span><span class="tech-tag">Starlette</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="backend" style="--brand-color: #3776AB; --brand-glow: rgba(55, 118, 171, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #3776AB18; border-color: #3776AB45;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.914 0C5.82 0 6.193 2.656 6.193 2.656l.01 2.748h5.813v.842H3.88s-3.88-.44-3.88 5.75c0 6.192 3.393 5.973 3.393 5.973h2.025v-2.85s-.11-3.394 3.34-3.394h5.757s3.23.052 3.23-3.125V2.656S18.232 0 11.914 0zm-3.28 1.76a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1zm3.453 10.428s-3.23-.052-3.23 3.125v6.027s-.492 2.66 5.826 2.66c6.094 0 5.72-2.66 5.72-2.66l-.008-2.748h-5.814v-.842h8.136s3.88.44 3.88-5.75c0-6.193-3.393-5.973-3.393-5.973h-2.025v2.85s.11 3.394-3.34 3.394h-5.752zm3.28 10.052a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Python</h3>
+                <span class="tech-badge badge-primary">Core Backend</span>
+              </div>
+              <span class="tech-sub">Backend Services & Pipelines</span>
+            </div>
+          </div>
+          <p class="tech-desc">Server-side logic, automated web ingestion pipelines, data normalization, and AI matching algorithms.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python 3.11+</span><span class="tech-tag">Typing</span><span class="tech-tag">Data Pipelines</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="backend" style="--brand-color: #336791; --brand-glow: rgba(51, 103, 145, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #33679118; border-color: #33679145;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">PostgreSQL</h3>
+                <span class="tech-badge badge-cyan">3NF Relational DB</span>
+              </div>
+              <span class="tech-sub">Normalized Enterprise Database</span>
+            </div>
+          </div>
+          <p class="tech-desc">Third Normal Form (3NF) relational modeling, entity deduplication, indexing, and complex ACID queries.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">3NF Schemas</span><span class="tech-tag">Entity Resolution</span><span class="tech-tag">Complex Joins</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="backend" style="--brand-color: #FFA611; --brand-glow: rgba(255, 166, 17, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #FFA61118; border-color: #FFA61145;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3.89 15.672L6.255.461A.542.542 0 0 1 7.27.288l2.543 4.771zm16.794 3.692l-2.25-14a.54.54 0 0 0-.919-.295L3.316 19.365l7.856 4.427a1.621 1.621 0 0 0 1.588 0zM14.3 7.147l-1.82-3.482a.542.542 0 0 0-.96 0L3.53 17.984z"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Firebase</h3>
+                <span class="tech-badge badge-amber">Cloud BaaS</span>
+              </div>
+              <span class="tech-sub">Real-Time Cloud Infrastructure</span>
+            </div>
+          </div>
+          <p class="tech-desc">Production authentication, Cloud Firestore real-time synchronization, Cloud Storage, and FCM push alerts.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Auth</span><span class="tech-tag">Cloud Firestore</span><span class="tech-tag">FCM Push</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="backend" style="--brand-color: #3ECF8E; --brand-glow: rgba(62, 207, 142, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #3ECF8E18; border-color: #3ECF8E45;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L.242 13.916A.792.792 0 0 0 .858 15.2h9.362v8.958a.396.396 0 0 0 .716.233l11.042-13.753a.792.792 0 0 0-.616-1.284z"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Supabase</h3>
+                <span class="tech-badge badge-mint">Open-Source BaaS</span>
+              </div>
+              <span class="tech-sub">Postgres BaaS & Realtime</span>
+            </div>
+          </div>
+          <p class="tech-desc">Relational PostgreSQL backend-as-a-service with Row Level Security (RLS) policies and realtime data sync.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">PostgreSQL</span><span class="tech-tag">RLS Policies</span><span class="tech-tag">Realtime Sync</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="backend" style="--brand-color: #00758F; --brand-glow: rgba(0, 117, 143, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #00758F18; border-color: #00758F45;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="8" cy="18" r="2" fill="currentColor"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">MySQL</h3>
+                <span class="tech-badge badge-cyan">Relational DB</span>
+              </div>
+              <span class="tech-sub">Relational Data Modeling</span>
+            </div>
+          </div>
+          <p class="tech-desc">Structured database design, relational integrity constraints, stored routines, and query performance tuning.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Relational Models</span><span class="tech-tag">Indexes</span><span class="tech-tag">Transactions</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="devops" style="--brand-color: #2496ED; --brand-glow: rgba(36, 150, 237, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #2496ED18; border-color: #2496ED45;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.186.185.186m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186m5.893 2.715h2.118a.186.186 0 00.186-.186V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186H8.1a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H5.136a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185m-2.928 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H2.208a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185M23.76 9.89c-.365-1.554-1.556-2.185-1.556-2.185-.845-.583-2.07-.384-2.07-.384-.287.05-.595.148-.903.298-.01-.06-.02-.12-.032-.18-.288-1.423-1.488-2.015-1.488-2.015-.805-.558-1.972-.367-1.972-.367a5.53 5.53 0 00-.86.284V3.574c0-.986-.799-1.785-1.784-1.785h-2.119c-.985 0-1.784.799-1.784 1.785V5.21H8.1c-.985 0-1.785.799-1.785 1.785v.932H5.136c-.986 0-1.785.8-1.785 1.786v.932H2.208c-.985 0-1.785.799-1.785 1.785v1.888c0 .986.799 1.785 1.785 1.785h.068C2.5 18.064 6.786 21.05 12.164 21.05c7.098 0 11.66-4.52 11.66-9.613 0-.54-.055-1.058-.064-1.547z"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Docker</h3>
+                <span class="tech-badge badge-cyan">Containerization</span>
+              </div>
+              <span class="tech-sub">Reproducible Environments</span>
+            </div>
+          </div>
+          <p class="tech-desc">Multi-stage container builds, Docker Compose orchestration for microservices, and isolated dev environments.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Dockerfiles</span><span class="tech-tag">Docker Compose</span><span class="tech-tag">Isolation</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="devops" style="--brand-color: #F05032; --brand-glow: rgba(240, 80, 50, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #F0503218; border-color: #F0503245;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M2.6 10.59L8.38 4.8a1.37 1.37 0 0 1 1.94 0l1.4 1.4-2.3 2.3a2.05 2.05 0 0 0-.6 2.05l-1.9 1.9a1.37 1.37 0 0 1-1.94 0L2.6 10.59a1.37 1.37 0 0 1 0-1.94l.8-.8-1.4-1.4a2.74 2.74 0 0 0 0 3.88l5.88 5.88a2.74 2.74 0 0 0 3.88 0l1.8-1.8a2.05 2.05 0 0 0 1.9-.4 2.05 2.05 0 0 0 .5-2.2l2.3-2.3 1.4 1.4a1.37 1.37 0 0 1 0 1.94l-5.88 5.88a1.37 1.37 0 0 1-1.94 0l-1.4-1.4 2.3-2.3a2.05 2.05 0 0 0 .6-2.05l1.9-1.9a1.37 1.37 0 0 1 1.94 0l2.28 2.29a1.37 1.37 0 0 0 1.94 0l3.88-3.88a2.74 2.74 0 0 0 0-3.88L15.38 2.6a2.74 2.74 0 0 0-3.88 0L9.7 4.4a2.05 2.05 0 0 0-1.9.4 2.05 2.05 0 0 0-.5 2.2l-2.3 2.3z"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Git & GitHub</h3>
+                <span class="tech-badge badge-amber">VCS & CI/CD</span>
+              </div>
+              <span class="tech-sub">Version Control & Workflows</span>
+            </div>
+          </div>
+          <p class="tech-desc">Feature branching strategies, pull request reviews, commit hygiene, and automated GitHub Pages deployments.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Branching</span><span class="tech-tag">PR Reviews</span><span class="tech-tag">GitHub Pages</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="devops" style="--brand-color: #3DDC84; --brand-glow: rgba(61, 220, 132, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #3DDC8418; border-color: #3DDC8445;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor"/><path d="M8 6h8M8 10h8M8 14h5"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Android Studio</h3>
+                <span class="tech-badge badge-mint">Primary IDE</span>
+              </div>
+              <span class="tech-sub">Android IDE & Build Tooling</span>
+            </div>
+          </div>
+          <p class="tech-desc">Gradle build optimization, Android Virtual Devices, memory profiling, and layout inspection tools.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Gradle</span><span class="tech-tag">Profiler</span><span class="tech-tag">Logcat</span><span class="tech-tag">Emulators</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="devops" style="--brand-color: #FF6C37; --brand-glow: rgba(255, 108, 55, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #FF6C3718; border-color: #FF6C3745;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4.5c1.62-1.63 5-2.5 5-2.5"/><path d="M15 18v5s3.03-.55 4.5-2c1.63-1.62 2.5-5 2.5-5"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Postman</h3>
+                <span class="tech-badge badge-amber">API Testing</span>
+              </div>
+              <span class="tech-sub">RESTful Testing Suite</span>
+            </div>
+          </div>
+          <p class="tech-desc">Automated API testing workflows, environment variable configurations, and endpoint verification.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">API Testing</span><span class="tech-tag">Collections</span><span class="tech-tag">Mock Servers</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="arch" style="--brand-color: #00FFA3; --brand-glow: rgba(0, 255, 163, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #00FFA318; border-color: #00FFA345;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><line x1="8.5" y1="7.5" x2="15.5" y2="7.5"/><line x1="7.5" y1="8.5" x2="10.5" y2="15.5"/><line x1="16.5" y1="8.5" x2="13.5" y2="15.5"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">WebRTC</h3>
+                <span class="tech-badge badge-mint">Real-Time Protocol</span>
+              </div>
+              <span class="tech-sub">Peer-to-Peer Communication</span>
+            </div>
+          </div>
+          <p class="tech-desc">Low-latency peer-to-peer audio and high-resolution video streaming integrated into mobile messaging applications.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">P2P Video/Voice</span><span class="tech-tag">STUN/TURN</span><span class="tech-tag">MediaStreams</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="arch" style="--brand-color: #818CF8; --brand-glow: rgba(129, 140, 248, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #818CF818; border-color: #818CF845;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="6" rx="1"/><rect x="3" y="15" width="8" height="6" rx="1"/><rect x="13" y="15" width="8" height="6" rx="1"/><line x1="7" y1="9" x2="7" y2="15"/><line x1="17" y1="9" x2="17" y2="15"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">UML System Design</h3>
+                <span class="tech-badge badge-accent">Certified (Dec 2025)</span>
+              </div>
+              <span class="tech-sub">Object-Oriented Architecture</span>
+            </div>
+          </div>
+          <p class="tech-desc">Comprehensive system planning using Class diagrams, Sequence diagrams, and Use Case specifications (Mind Luster certified).</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Class Diagrams</span><span class="tech-tag">Sequence Flow</span><span class="tech-tag">Use Cases</span>
+          </div>
+        </div>
+        <div class="tech-card glass reveal" data-category="arch" style="--brand-color: #A78BFA; --brand-glow: rgba(167, 139, 250, 0.28);">
+          <div class="tech-card-header">
+            <div class="tech-icon-box" style="background: #A78BFA18; border-color: #A78BFA45;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polygon points="2 17 12 22 22 17"/><polygon points="2 12 12 17 22 12"/></svg>
+            </div>
+            <div class="tech-meta">
+              <div class="tech-name-row">
+                <h3 class="tech-name">Clean Architecture & MVVM</h3>
+                <span class="tech-badge badge-accent">Design Pattern</span>
+              </div>
+              <span class="tech-sub">Separation of Concerns</span>
+            </div>
+          </div>
+          <p class="tech-desc">Decoupled domain, data, and presentation layers with repository patterns, use cases, and unidirectional data flow.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">MVVM</span><span class="tech-tag">Repository Pattern</span><span class="tech-tag">State Flow</span>
           </div>
         </div>
       </div>
@@ -1413,6 +1660,6 @@
     </div>
   </div>
 
-  <script src="main.js?v=26"></script>
+  <script src="main.js?v=27"></script>
 </body>
 </html>

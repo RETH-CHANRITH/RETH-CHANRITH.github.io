@@ -333,7 +333,7 @@ document.querySelectorAll('.magnetic').forEach(btn => {
 });
 
 // ── SPOTLIGHT ──
-document.querySelectorAll('.proj-card, .skill-box, .gh-chart-card, .gh-lang-card, .edu-card, .tl-card').forEach(card => {
+document.querySelectorAll('.proj-card, .skill-box, .tech-card, .gh-chart-card, .gh-lang-card, .edu-card, .tl-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const r = card.getBoundingClientRect();
     card.style.setProperty('--mx', ((e.clientX - r.left) / r.width  * 100).toFixed(1) + '%');
@@ -455,6 +455,31 @@ const ringObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.3 });
 document.querySelectorAll('.skill-box').forEach(b => ringObs.observe(b));
+
+
+// ── TECH STACK CATEGORY FILTER ──
+const techFilterBtns = document.querySelectorAll('.tech-filter-btn');
+const techCards = document.querySelectorAll('.tech-card');
+
+techFilterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.getAttribute('data-filter');
+    techFilterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    techCards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      if (filter === 'all' || cat === filter) {
+        card.classList.remove('is-hidden');
+        card.style.animation = 'none';
+        void card.offsetWidth;
+        card.style.animation = 'fadeInUp 0.35s ease forwards';
+      } else {
+        card.classList.add('is-hidden');
+      }
+    });
+  });
+});
 
 // ── ANIMATED COUNTER ──
 function animCount(el, target, duration = 1400, suffix = '') {
