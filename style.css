@@ -2755,6 +2755,8 @@ body.loaded { opacity: 1; }
   border-radius: 100px;
   border: 1px solid rgba(129, 140, 248, 0.3);
   text-transform: none;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .gh-chart-wrap {
   width: 100%;
