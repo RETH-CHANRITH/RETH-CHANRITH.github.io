@@ -941,6 +941,16 @@ function initPage() {
   document.body.classList.add('loaded');
   fetchGitHubData();
   attachCalendarTooltips();
+
+  // Android mascot playful click emote
+  document.querySelectorAll('.nav-logo-icon').forEach(icon => {
+    icon.addEventListener('click', () => {
+      icon.classList.remove('android-spin');
+      void icon.offsetWidth; // trigger reflow
+      icon.classList.add('android-spin');
+      setTimeout(() => icon.classList.remove('android-spin'), 700);
+    });
+  });
 }
 
 if (document.readyState === 'loading') {

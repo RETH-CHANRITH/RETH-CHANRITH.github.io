@@ -210,16 +210,49 @@ body.loaded { opacity: 1; }
 }
 .nav-logo:hover { color: var(--mint); }
 .nav-logo-icon {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(61, 220, 132, 0.4));
-  transition: transform var(--t) var(--ease), filter var(--t) var(--ease);
+  background: transparent;
+  transform-origin: center bottom;
+  animation: androidFloat 3.8s ease-in-out infinite;
+  transition: filter var(--t) var(--ease);
+  cursor: pointer;
 }
 .nav-logo:hover .nav-logo-icon {
-  transform: scale(1.12) rotate(-4deg);
-  filter: drop-shadow(0 4px 18px rgba(61, 220, 132, 0.8));
+  animation: androidEmote 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) infinite alternate;
+  filter: drop-shadow(0 0 16px rgba(61, 220, 132, 0.95)) drop-shadow(0 6px 12px rgba(0, 255, 163, 0.7));
+}
+.nav-logo-icon.android-spin {
+  animation: androidSpin 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+@keyframes androidFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    filter: drop-shadow(0 2px 8px rgba(61, 220, 132, 0.45));
+  }
+  50% {
+    transform: translateY(-4px) rotate(-3deg);
+    filter: drop-shadow(0 6px 14px rgba(61, 220, 132, 0.7));
+  }
+}
+
+@keyframes androidEmote {
+  0% {
+    transform: translateY(0) scale(1.15) rotate(-6deg);
+  }
+  100% {
+    transform: translateY(-5px) scale(1.22) rotate(6deg);
+  }
+}
+
+@keyframes androidSpin {
+  0% { transform: scale(1) rotate(0deg); }
+  45% { transform: scale(1.35) rotate(-20deg); }
+  85% { transform: scale(1.18) rotate(375deg); }
+  100% { transform: scale(1) rotate(360deg); }
 }
 
 .nav-right {
