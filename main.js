@@ -59,11 +59,14 @@ function onScroll() {
 // ── BACK TO TOP ──
 document.getElementById('backToTop').addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
 
-// ── NAVBAR ──
+// ── NAVBAR & SILKY SMOOTH SLIDING PILL ──
 const navbar  = document.getElementById('navbar');
 const navPill = document.getElementById('navPill');
 const navLinksContainer = document.getElementById('navLinks');
 const navCta = document.getElementById('navCta');
+
+let isNavClickScrolling = false;
+let navClickTimeout = null;
 
 function moveNavPillToElement(el) {
   if (!navPill || !el || window.innerWidth <= 768 || !navLinksContainer) return;
@@ -76,16 +79,25 @@ function moveNavPillToElement(el) {
 }
 
 function updateActiveNav() {
-  if (!navLinksContainer) return;
+  if (isNavClickScrolling || !navLinksContainer) return;
   const sections = document.querySelectorAll('section[id]');
-  const links    = navLinksContainer.querySelectorAll('.nav-link');
+  const scrollPos = window.scrollY + 180;
   let curr = '';
+
   sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 160) {
+    const top = s.offsetTop;
+    const height = s.offsetHeight;
+    if (scrollPos >= top && scrollPos < top + height) {
       curr = s.id === 'github' ? 'about' : s.id;
     }
   });
 
+  // Edge case: when user reaches the very bottom of the document
+  if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 60) {
+    curr = 'contact';
+  }
+
+  const links = navLinksContainer.querySelectorAll('.nav-link');
   let activeLi = null;
   links.forEach(l => {
     const isActive = l.getAttribute('href') === `#${curr}`;
@@ -98,25 +110,88 @@ function updateActiveNav() {
   if (activeLi && window.innerWidth > 768) {
     moveNavPillToElement(activeLi);
   } else if (!activeLi && navPill && window.innerWidth > 768) {
-    navPill.style.opacity = '0';
+    if (window.scrollY < 200) {
+      navPill.style.opacity = '0';
+    }
   }
 }
 updateActiveNav();
+
+// Synchronize navbar pill to a specific target section
+function syncNavToTarget(targetId) {
+  if (!navLinksContainer) return;
+  const matchingLink = navLinksContainer.querySelector(`.nav-link[href="${targetId}"]`);
+  if (matchingLink) {
+    navLinksContainer.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    matchingLink.classList.add('active');
+    moveNavPillToElement(matchingLink.closest('li'));
+  }
+}
+
+// Precision buttery-smooth scrolling with nav lock
+function smoothScrollTo(targetSelector, duration = 850) {
+  const target = document.querySelector(targetSelector);
+  if (!target) return;
+
+  const headerOffset = 72;
+  const targetY = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+  isNavClickScrolling = true;
+  if (navClickTimeout) clearTimeout(navClickTimeout);
+
+  window.scrollTo({
+    top: Math.max(0, targetY),
+    behavior: 'smooth'
+  });
+
+  navClickTimeout = setTimeout(() => {
+    isNavClickScrolling = false;
+    updateActiveNav();
+  }, duration);
+}
+
+// Modern scrollend listener to instantly unlock when smooth scroll finishes
+if ('onscrollend' in window) {
+  window.addEventListener('scrollend', () => {
+    if (isNavClickScrolling) {
+      isNavClickScrolling = false;
+      updateActiveNav();
+    }
+  }, { passive: true });
+}
 
 // Dynamic hover gliding pill & click response
 if (navLinksContainer) {
   navLinksContainer.querySelectorAll('.nav-link').forEach(l => {
     l.addEventListener('mouseenter', () => {
+      if (isNavClickScrolling) return;
       const li = l.closest('li');
       moveNavPillToElement(li);
     });
-    l.addEventListener('click', () => {
+
+    l.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = l.getAttribute('href');
       const li = l.closest('li');
+
+      // 1. Immediately snap active class and glide the pill with zero jitter
+      navLinksContainer.querySelectorAll('.nav-link').forEach(other => other.classList.remove('active'));
+      l.classList.add('active');
       moveNavPillToElement(li);
+
+      // 2. Perform smooth scroll with lock
+      smoothScrollTo(href);
     });
   });
+
   navLinksContainer.addEventListener('mouseleave', () => {
-    updateActiveNav();
+    if (isNavClickScrolling) return;
+    const currentActive = navLinksContainer.querySelector('.nav-link.active');
+    if (currentActive) {
+      moveNavPillToElement(currentActive.closest('li'));
+    } else {
+      updateActiveNav();
+    }
   });
 }
 
@@ -797,11 +872,17 @@ async function fetchRepoStars() {
   }));
 }
 
-// ── SMOOTH SCROLL ──
-document.querySelectorAll('a[href^="#"]').forEach(a => {
+// ── SMOOTH SCROLL (for in-page buttons outside navbar) ──
+document.querySelectorAll('a[href^="#"]:not(.nav-link)').forEach(a => {
   a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' }); }
+    const href = a.getAttribute('href');
+    if (href && href.length > 1) {
+      e.preventDefault();
+      smoothScrollTo(href);
+      if (typeof syncNavToTarget === 'function') {
+        syncNavToTarget(href);
+      }
+    }
   });
 });
 
