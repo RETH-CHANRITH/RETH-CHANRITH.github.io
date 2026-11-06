@@ -577,6 +577,7 @@ body.loaded { opacity: 1; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 15%;
   display: block;
 }
 @keyframes avatarPulse {
@@ -786,6 +787,7 @@ body.loaded { opacity: 1; }
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 15%;
   display: block;
   z-index: 1;
 }
